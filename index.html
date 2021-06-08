@@ -5,7 +5,7 @@
 		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 		<script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
 		
-		<script>
+		<!--<script>
 		  window.onload = function(){
 		    document
 			  .querySelector(".btn")
@@ -13,9 +13,14 @@
 			    window.location.replace("video.html");
 			  });
 		  };
-		</script>
+		</script>-->
 		<script>
 		  window.onload = function(){
+		    document
+			  .querySelector(".btn")
+			  .addEventListener("click", function() {
+			    window.location.replace("video.html");
+			  });
 		    document
 			  .querySelector(".btn2")
 			  .addEventListener("click", function() {
