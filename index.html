@@ -3,6 +3,7 @@
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 		<!-- we import arjs version without NFT but with marker + location based support -->
 		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+		<script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
 
         <style>
             .arjs-loader {
@@ -27,12 +28,38 @@
     </header>
 
     <body style="margin : 0px; overflow: hidden;">
-      <a-scene embedded arjs>
-      <a-marker type="pattern" preset="custom" url="pattern-marker.patt">
+      <a-scene 
+	    embedded 
+		arjs
+		renderer="logarithmicDepthBuffer: true;"
+		vr-mode-ui="enabled: false"
+		gesture-detector
+		id="scene"
+	  >
+	  <a-assets>
+		<a-asset-item
+		  id="helmet"
+		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"
+		>
+		</a-asset-item>
+	  </a-assets>
+	  
+      <a-marker 
+	    type="pattern" 
+		preset="custom" 
+		url="pattern-marker.patt"
+		raycaster="objects: .clickable"
+		emitevents="true"
+		cursor="fuse: false; rayOrigin: mouse;"
+		id="markerA"
+	  >
         <a-entity
+		  id="helmet-model"
+		  gltf-model="#helmet"
           position="0 0 0"
-          scale="5 5 5"
-          gltf-model="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"
+          scale="1 1 1"
+          class="clickable"
+		  gesture-handler
         ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
