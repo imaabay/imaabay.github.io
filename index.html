@@ -111,6 +111,7 @@
 		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/BoxVertexColors/glTF/BoxVertexColors.gltf"
 		>
 		</a-asset-item>
+		<video id="promotional" src="video.mp4"></video>
 	  </a-assets>
 	  
       <a-marker 
@@ -122,11 +123,12 @@
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
 	  >
+	    <a-video src="#promotional" width="16" height="9" position="2 2 2"></a-video>
 		<a-entity
 		  id="box-model"
 		  gltf-model="#box"
-          position="2 2 2"
-          scale="2 2 2"
+          position="1 1 1"
+          scale="1 1 1"
           class="clickable"
 		  gesture-handler
         ></a-entity>
