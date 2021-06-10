@@ -19,6 +19,26 @@
 			//("#videoPlayer").hide();	
 		  //});
 		  
+		    AFRAME.registerComponent('vidhandler', {
+    
+				init: function () {
+					this.toggle = false;
+					this.vid = document.querySelector("#promotional")
+					this.vid.pause();
+				},
+				tick: function () {
+					if (this.el.object3D.visible == true) {
+						if (!this.toggle) {
+							this.toggle = true;
+							this.vid.play();
+						}
+					} else {
+						this.toggle = false;
+						this.vid.pause();
+					}
+				}
+			});
+		  
 		</script>
 		
 
@@ -107,7 +127,7 @@
 		>
 		
 		</a-asset-item>
-		<video id="promotional" autoplay loop="true" src="video.mp4" webkit-playsinline playsinline></video>
+		<video crossorigin="anonymous" id="promotional" autoplay loop="true" src="video.mp4" webkit-playsinline playsinline type="video/mp4" preload="auto">
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
@@ -115,7 +135,7 @@
 	    <a-video src="#promotional" width="5" height="3" position="1 2 3"></a-video>
 	  </div>-->
 	  
-	  <a-video id="videoPlayer" src="#promotional" width="5" height="3" position="1 2 3" gesture-handler></a-video>
+	  
 	  
       <a-marker 
 	    type="pattern" 
@@ -125,8 +145,9 @@
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
+		vidhandler
 	  >
-	    
+	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" position="1 2 3" rotation="270 0 0" gesture-handler></a-video>
 		<!--<a-entity
 		  clickhandler
 		  id="box-model"
@@ -146,14 +167,14 @@
 			gesture-handler
         </a-box>-->
 		
-        <a-entity
+        <!--<a-entity
 		  id="helmet-model"
 		  clickhandler
 		  gltf-model="#box"
           position="0 0 0"
           scale="4 4 4"
 		  gesture-handler
-        ></a-entity>
+        ></a-entity>-->
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
@@ -165,6 +186,10 @@
 			//midClick: true 
 			//});
 		//});
+		window.addEventListener('click', function () {
+		  var v = document.querySelector('#BS0i6');
+		  v.play();
+		});
 		
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
@@ -176,18 +201,6 @@
 		            $("#promotional").show();
 				});
 		}});
-	  
-	  
-	  function hideVideo(){
-	    alert("hide video");
-		$("#videoPlayer").hide();
-		$("#promotional").hide();
-	  }
-	  
-	  $(document).ready(function(){
-	    $("#videoPlayer").hide();
-		$("#promotional").hide();
-	  })
 	</script>
     </body>
 
