@@ -14,8 +14,8 @@
 		
 		<script>
 		  $( document ).load(function() {
-		    alert("Hide 3");
-			("#promotional").hide();	
+		    //alert("Hide 3");
+			("#videoContainer").hide();	
 		  });
 		</script>
 		
@@ -81,8 +81,8 @@
 				init: function() {
 				    const btn = document.querySelector("#helmet-model");
 					btn.addEventListener('click', () => {
-					    alert("Video 5");
-						document.getElementById("promotional").style.display="block";
+					    alert("Video 6");
+						//document.getElementById("promotional").style.display="block";
 					});
 			}});
 			
@@ -126,6 +126,10 @@
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
+	  <div id="videoContainer" width="350" height="255">
+	    <a-video src="#promotional" width="5" height="3" position="1 2 3"></a-video>
+	  </div>
+	  
       <a-marker 
 	    type="pattern" 
 		preset="custom" 
@@ -135,7 +139,7 @@
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
 	  >
-	    <a-video src="#promotional" width="5" height="3" position="1 2 3"></a-video>
+	    
 		<!--<a-entity
 		  clickhandler
 		  id="box-model"
