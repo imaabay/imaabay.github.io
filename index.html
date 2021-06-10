@@ -21,22 +21,7 @@
 			  });
 		  };
 		</script>-->
-		<script>
-		    //$( document ).ready(function() {
-				//$('#headerVideoLink').magnificPopup({
-				//type:'inline',
-				//midClick: true 
-				//});
-			//});
-			
-			AFRAME.registerComponent('clickhandler', {
-				init: function() {
-					this.el.addEventListener('click', () => {
-						alert('Clicked!')
-					});
-			}});
-			
-		</script>
+		
 
         <style>
             .arjs-loader {
@@ -87,6 +72,23 @@
 			}
           </style>
     </header>
+	<script>
+		    //$( document ).ready(function() {
+				//$('#headerVideoLink').magnificPopup({
+				//type:'inline',
+				//midClick: true 
+				//});
+			//});
+			
+			AFRAME.registerComponent('clickhandler', {
+				init: function() {
+				    const btn = document.querySelector("#box-model");
+					btn.addEventListener('click', () => {
+						alert('Clicked!')
+					});
+			}});
+			
+		</script>
 
     <body style="margin : 0px; overflow: hidden;">
 	  <!--<div class="container">
@@ -129,13 +131,13 @@
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-marker.patt"
-		raycaster="objects: .clickable, clickhandler"
+		raycaster="objects: .clickable"
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
 	  >
 	    <!--<a-video src="#promotional" width="3" height="1" position="2 0.5 2"></a-video>-->
-		<a-entity
+		<!--<a-entity
 		  clickhandler
 		  id="box-model"
 		  gltf-model="#box"
@@ -143,7 +145,15 @@
           scale="0.5 0.5 0.5"
           class="clickable"
 		  gesture-handler
-        ></a-entity>
+        ></a-entity>-->
+		
+		<a-box
+		    id="box-model"
+            clickhandler
+            material="color: red;"
+            position="1 1 1"
+            scale="0.5 0.5 0.5"
+        </a-box>
 		
         <a-entity
 		  id="helmet-model"
