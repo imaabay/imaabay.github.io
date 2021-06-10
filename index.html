@@ -115,7 +115,7 @@
 	    <a-video src="#promotional" width="5" height="3" position="1 2 3"></a-video>
 	  </div>-->
 	  
-	  
+	  <a-video id="videoPlayer" src="#promotional" width="5" height="3" position="1 2 3" gesture-handler></a-video>
 	  
       <a-marker 
 	    type="pattern" 
@@ -126,7 +126,7 @@
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
 	  >
-	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" position="1 2 3" gesture-handler></a-video>
+	    
 		<!--<a-entity
 		  clickhandler
 		  id="box-model"
@@ -170,7 +170,7 @@
 			init: function() {
 				const btn = document.querySelector("#helmet-model");
 				btn.addEventListener('click', () => {
-					alert("Video 10");
+					alert("Video 11");
 					//document.getElementById("videoContainer").style.display="block";
 					$("#videoPlayer").show();
 		            $("#promotional").show();
