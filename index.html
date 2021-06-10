@@ -1,6 +1,5 @@
 <html>
     <header>
-	    <meta name="apple-mobile-web-app-capable" content="yes">
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 		<!-- we import arjs version without NFT but with marker + location based support -->
 		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -109,7 +108,7 @@
 	 
       <a-scene 
 	    embedded 
-		arjs
+		arjs = 'sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
 		renderer="logarithmicDepthBuffer: true;"
 		vr-mode-ui="enabled: false"
 		gesture-detector
@@ -127,7 +126,7 @@
 		>
 		
 		</a-asset-item>
-		<video crossorigin="anonymous" id="promotional" autoplay loop="true" src="video.mp4" webkit-playsinline playsinline type="video/mp4" preload="auto">
+		<video crossorigin="anonymous" id="promotional" autoplay loop="true" src="video.mp4" type="video/mp4" preload="auto">
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
@@ -138,6 +137,7 @@
 	  
 	  
       <a-marker 
+	    vidhandler
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-marker.patt"
@@ -145,7 +145,6 @@
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
-		vidhandler
 	  >
 	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" position="1 2 3" rotation="270 0 0" gesture-handler></a-video>
 		<!--<a-entity
@@ -167,14 +166,14 @@
 			gesture-handler
         </a-box>-->
 		
-        <!--<a-entity
+        <a-entity
 		  id="helmet-model"
 		  clickhandler
 		  gltf-model="#box"
           position="0 0 0"
           scale="4 4 4"
 		  gesture-handler
-        ></a-entity>-->
+        ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
@@ -187,7 +186,7 @@
 			//});
 		//});
 		window.addEventListener('click', function () {
-		  var v = document.querySelector('#BS0i6');
+		  var v = document.querySelector('#videoPlayer');
 		  v.play();
 		});
 		
@@ -197,8 +196,8 @@
 				btn.addEventListener('click', () => {
 					alert("Video 11");
 					//document.getElementById("videoContainer").style.display="block";
-					$("#videoPlayer").show();
-		            $("#promotional").show();
+					//$("#videoPlayer").show();
+		            //$("#promotional").show();
 				});
 		}});
 	</script>
