@@ -131,7 +131,7 @@
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-marker.patt"
-		raycaster="objects: .clickable"
+		raycaster="objects: [clickhandler]"
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
@@ -153,7 +153,6 @@
             material="color: red;"
             position="1 1 1"
             scale="1 1 1"
-			class="clickable"
 			gesture-handler
         </a-box>
 		
