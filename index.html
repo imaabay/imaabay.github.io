@@ -29,18 +29,12 @@
 				//});
 			//});
 			
-			AFRAME.registerComponent('openvideo', {
-				init: function(){
-				  const boxButton = document.querySelector("#box-model");
-				  
-				  boxButton.addEventListener('click', function(ev, target){
-					const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-					if (boxButton && intersectedElement === boxButton) {
-					  window.location = 'https://www.google.com/';
-					}
-				  });
-				}
-			});
+			AFRAME.registerComponent('clickhandler', {
+				init: function() {
+					this.el.addEventListener('click', () => {
+						alert('Clicked!')
+					});
+			}});
 		</script>
 
         <style>
@@ -127,6 +121,7 @@
 		>
 		</a-asset-item>
 		<video id="promotional" src="video.mp4"></video>
+		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
       <a-marker 
@@ -139,7 +134,7 @@
 		id="markerA"
 	  >
 	    <!--<a-video src="#promotional" width="3" height="1" position="2 0.5 2"></a-video>-->
-		<a-entity
+		<!--<a-entity
 		  id="box-model"
 		  gltf-model="#box"
           position="1 1 1"
@@ -147,7 +142,8 @@
           class="clickable"
 		  gesture-handler
 		  openvideo
-        ></a-entity>
+        ></a-entity>-->
+		<a-image clickhandler src="#btn_start" width="2" height="1" ></a-image>
         <a-entity
 		  id="helmet-model"
 		  gltf-model="#helmet"
