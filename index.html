@@ -85,6 +85,15 @@
 			  width: 35em;
 			  height: 2em;
 			}
+			.btnVideo2{
+			  padding: 0.25em;
+			  border-radius: 5px;
+			  border: none;
+			  background: black;
+			  color: white;
+			  width: 35em;
+			  height: 2em;
+			}
 			#headerPopup{
 			  width:75%;
 			  margin:0 auto;
@@ -113,7 +122,10 @@
 	 
 	 <div class="buttons">
       <button class="btnVideo">Start</button>
-    </div>
+     </div>
+	 <div class="buttons">
+      <button class="btnVideo2">Stop</button>
+     </div>
 	 
 	 
       <a-scene 
@@ -139,7 +151,7 @@
 		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/Box/glTF/Box.gltf"
 		>
 		</a-asset-item>
-		<video crossorigin="anonymous" id="promotional" autoplay loop="true" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
+		<video crossorigin="anonymous" id="promotional" autoplay loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
@@ -192,6 +204,7 @@
 				const btn = document.querySelector("#helmet-model");
 				const btn2 = document.querySelector("#helmet-model2");
 				const btn3 = document.querySelector(".btnVideo");
+				const btn4 = document.querySelector(".btnVideo2");
 				var v = document.querySelector("#promotional")
 				btn.addEventListener('click', () => {
 					v.play();
@@ -201,6 +214,9 @@
 				});
 				btn3.addEventListener('click', () => {
 					v.play();
+				});
+				btn4.addEventListener('click', () => {
+					v.pause();
 				});
 				
 		}});
