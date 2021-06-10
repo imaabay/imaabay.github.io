@@ -13,10 +13,10 @@
 		
 		
 		<script>
-		  //$( document ).ready(function() {
+		  $( document ).ready(function() {
 		   // alert("Hide 3");
-			//("#videoContainer").show();	
-		  //});
+			("#videoPlayer").hide();	
+		  });
 		</script>
 		
 
@@ -141,8 +141,7 @@
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
 	  >
-	    
-	    <a-video src="#promotional" width="5" height="3" position="1 2 3"></a-video>
+	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" position="1 2 3"></a-video>
 		<!--<a-entity
 		  clickhandler
 		  id="box-model"
