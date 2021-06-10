@@ -174,13 +174,13 @@
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 	  >
-	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="2 2 2"></a-video>
+	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="0 0 3"></a-video>
         <a-entity
 		  clickhandler
 		  id="helmet-model"
 		  gltf-model="#box"
-          position="0 0 -3"
-          scale="3 3 3"
+          position="0 0 -4"
+          scale="1 1 1"
         ></a-entity>
 		<!--<a-entity
 		  id="helmet-model2"
@@ -192,7 +192,6 @@
         ></a-entity>-->
 		<a-entity
 		  id="helmet-model3"
-		  clickhandler
 		  gltf-model="#helmet"
           position="0 0 0"
           scale="2 2 2"
@@ -221,6 +220,7 @@
 				const btn = document.querySelector("#helmet-model");
 				var v = document.querySelector("#promotional")
 				btn.addEventListener('click', () => {
+				    alert("Hi");
 					v.play();
 				});		
 		}});
