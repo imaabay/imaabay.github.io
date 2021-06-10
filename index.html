@@ -1,5 +1,6 @@
 <html>
     <header>
+	    <meta name="apple-mobile-web-app-capable" content="yes">
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 		<!-- we import arjs version without NFT but with marker + location based support -->
 		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -17,6 +18,10 @@
 		   // alert("Hide 3");
 			//("#videoPlayer").hide();	
 		  //});
+		  
+		    document.querySelector('a-video').addEventListener('load', function(e){
+			  document.querySelector('#videoPlayer').style.display="none";
+			})
 		  
 		    AFRAME.registerComponent('vidhandler', {
     
@@ -108,7 +113,7 @@
 	 
       <a-scene 
 	    embedded 
-		arjs = 'sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
+		arjs
 		renderer="logarithmicDepthBuffer: true;"
 		vr-mode-ui="enabled: false"
 		gesture-detector
@@ -126,27 +131,21 @@
 		>
 		
 		</a-asset-item>
-		<video crossorigin="anonymous" id="promotional" autoplay loop="true" src="video.mp4" type="video/mp4" preload="auto">
+		<video id="promotional" autoplay loop="true" src="video.mp4" type="video/mp4" preload="auto" webkit-playsinline playsinline transparent="true">
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
-	  
-	  <!--<div id="videoContainer" width="350" height="255">
-	    <a-video src="#promotional" width="5" height="3" position="1 2 3"></a-video>
-	  </div>-->
-	  
-	  
 	  
       <a-marker 
 	    vidhandler
 	    type="pattern" 
 		preset="custom" 
-		url="pattern-marker.patt"
+		url="pattern-qr1.patt"
 		raycaster="objects: [clickhandler]"
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
 	  >
-	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" position="1 2 3" rotation="270 0 0" gesture-handler></a-video>
+	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" gesture-handler></a-video>
 		<!--<a-entity
 		  clickhandler
 		  id="box-model"
