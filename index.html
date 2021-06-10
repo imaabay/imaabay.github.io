@@ -131,8 +131,8 @@
 		>
 		
 		</a-asset-item>
-		<!--<video crossorigin="anonymous" id="promotional" autoplay loop="true" src="video.mp4" type="video/mp4" preload="auto" webkit-playsinline playsinline>-->
-		<iframe id="promotional" class="embed-responsive-item" width="854" height="480" src="https://www.youtube.com/embed/7t5gm5uA-RE?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		<video crossorigin="anonymous" id="promotional" autoplay loop="true" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
+		<!--<iframe id="promotional" class="embed-responsive-item" width="854" height="480" src="https://www.youtube.com/embed/7t5gm5uA-RE?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
@@ -144,7 +144,6 @@
 		raycaster="objects: [clickhandler]"
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
-		smooth="true"
 	  >
 	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="2 2 5"></a-video>
         <a-entity
@@ -171,11 +170,14 @@
 		  v.play();
 		});
 		
+		
+		
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
 				const btn = document.querySelector("#helmet-model");
+				var v = document.querySelector("#promotional")
 				btn.addEventListener('click', () => {
-					alert("Video 14");
+					v.play();
 				});
 		}});
 	</script>
