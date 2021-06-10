@@ -34,7 +34,10 @@
 				  const boxButton = document.querySelector("#box-model");
 				  
 				  boxButton.addEventListener('click', function(ev, target){
-					alert("Clicked");
+					const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+					if (boxButton && intersectedElement === boxButton) {
+					  window.location = 'https://www.google.com/';
+					}
 				  });
 				}
 			});
@@ -140,7 +143,7 @@
 		  id="box-model"
 		  gltf-model="#box"
           position="1 1 1"
-          scale="0.2 0.3 0.5"
+          scale="0.5 0.5 0.5"
           class="clickable"
 		  gesture-handler
         ></a-entity>
