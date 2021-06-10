@@ -18,10 +18,11 @@
 		   // alert("Hide 3");
 			//("#videoPlayer").hide();	
 		  //});
+		    //window.onload()
 		  
-		    document.querySelector('a-video').addEventListener('load', function(e){
-			  document.querySelector('#videoPlayer').style.display="none";
-			})
+		    //document.querySelector('a-video').addEventListener('click', function(e){
+			  //document.querySelector('#videoPlayer').style.display="none";
+			//})
 		  
 		    AFRAME.registerComponent('vidhandler', {
     
@@ -144,7 +145,7 @@
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 	  >
-	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="2 2 2" gesture-handler></a-video>
+	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="2 2 5" gesture-handler></a-video>
         <a-entity
 		  id="helmet-model"
 		  clickhandler
