@@ -14,16 +14,6 @@
 		
 		
 		<script>
-		  //$( document ).ready(function() {
-		   // alert("Hide 3");
-			//("#videoPlayer").hide();	
-		  //});
-		    //window.onload()
-		  
-		    //document.querySelector('a-video').addEventListener('click', function(e){
-			  //document.querySelector('#videoPlayer').style.display="none";
-			//})
-		  
 		    AFRAME.registerComponent('vidhandler', {
     
 				init: function () {
@@ -145,13 +135,13 @@
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 	  >
-	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="2 2 5" gesture-handler></a-video>
+	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="2 2 5"></a-video>
         <a-entity
 		  id="helmet-model"
 		  clickhandler
 		  gltf-model="#box"
           position="0 0 0"
-          scale="4 4 4"
+          scale="3 3 3"
 		  gesture-handler
         ></a-entity>
       </a-marker>
@@ -174,10 +164,7 @@
 			init: function() {
 				const btn = document.querySelector("#helmet-model");
 				btn.addEventListener('click', () => {
-					alert("Video 11");
-					//document.getElementById("videoContainer").style.display="block";
-					//$("#videoPlayer").show();
-		            //$("#promotional").show();
+					alert("Video 12");
 				});
 		}});
 	</script>
