@@ -131,12 +131,12 @@
 	  </div>
 	 </div>-->
 	 
-	 <div class="buttons">
+	 <!--<div class="buttons">
       <button class="btnVideo">Start</button>
      </div>
 	 <div class="buttons2">
       <button class="btnVideo2">Stop</button>
-     </div>
+     </div>-->
 	 
 	 
       <a-scene 
@@ -167,7 +167,6 @@
 	  </a-assets>
 	  
 	  <a-marker 
-	    vidhandler
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-marker.patt"
@@ -177,19 +176,26 @@
 	  >
 	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="2 2 2"></a-video>
         <a-entity
-		  id="helmet-model"
 		  clickhandler
+		  id="helmet-model"
 		  gltf-model="#box"
-          position="-3 -3 -3"
+          position="0 0 -3"
           scale="3 3 3"
-		  gesture-handler
         ></a-entity>
-		<a-entity
+		<!--<a-entity
 		  id="helmet-model2"
 		  clickhandler
 		  gltf-model="#box2"
           position="3 -3 -3"
           scale="3 3 3"
+		  gesture-handler
+        ></a-entity>-->
+		<a-entity
+		  id="helmet-model3"
+		  clickhandler
+		  gltf-model="#helmet"
+          position="0 0 0"
+          scale="2 2 2"
 		  gesture-handler
         ></a-entity>
       </a-marker>
@@ -203,10 +209,10 @@
 			//midClick: true 
 			//});
 		//});
-		window.addEventListener('click', function () {
-		  var v = document.querySelector('#videoPlayer');
-		  v.play();
-		});
+		//window.addEventListener('click', function () {
+		  //var v = document.querySelector('#videoPlayer');
+		 // v.play();
+		//});
 		
 		
 		
