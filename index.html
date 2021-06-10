@@ -129,7 +129,10 @@
 		  id="box"
 		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/BoxVertexColors/glTF/BoxVertexColors.gltf"
 		>
-		
+		<a-asset-item
+		  id="box2"
+		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/Box/glTF/Box.gltf"
+		>
 		</a-asset-item>
 		<video crossorigin="anonymous" id="promotional" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
 		<img id="btn_start" src="button_start.png">
@@ -144,7 +147,7 @@
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 	  >
-	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="2 2 5"></a-video>
+	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="2 2 2"></a-video>
         <a-entity
 		  id="helmet-model"
 		  clickhandler
@@ -156,8 +159,8 @@
 		<a-entity
 		  id="helmet-model2"
 		  clickhandler
-		  gltf-model="#box"
-          position="2 2 2"
+		  gltf-model="#box2"
+          position="0 1 0"
           scale="1 1 1"
 		  gesture-handler
         ></a-entity>
