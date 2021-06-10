@@ -14,7 +14,8 @@
 		
 		<script>
 		  $( document ).ready(function() {
-			$("#promotional").hide();	
+		    alert("Hide");
+			//$("#promotional").hide();	
 		  });
 		</script>
 		
@@ -80,8 +81,8 @@
 				init: function() {
 				    const btn = document.querySelector("#helmet-model");
 					btn.addEventListener('click', () => {
-					    alert("Video 3");
-						document.querySelector("#promotional").style.display="block";
+					    //alert("Video 3");
+						document.getElementById("promotional").style.display="none";
 					});
 			}});
 			
