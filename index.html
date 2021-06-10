@@ -82,7 +82,7 @@
 			
 			AFRAME.registerComponent('clickhandler', {
 				init: function() {
-				    const btn = document.querySelector("#box-model");
+				    const btn = document.querySelector("#helmet-model");
 					btn.addEventListener('click', () => {
 						alert('Clicked!')
 					});
@@ -147,23 +147,23 @@
 		  gesture-handler
         ></a-entity>-->
 		
-		<a-box
+		<!--<a-box
 		    id="box-model"
             clickhandler
             material="color: red;"
             position="1 1 1"
             scale="1 1 1"
 			gesture-handler
-        </a-box>
+        </a-box>-->
 		
-        <!--<a-entity
+        <a-entity
 		  id="helmet-model"
+		  clickhandler
 		  gltf-model="#helmet"
-          position="0 0 0"
-          scale="2 3 5"
-          class="clickable"
+          position="0 0 20"
+          scale="3 3 3"
 		  gesture-handler
-        ></a-entity>-->
+        ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
