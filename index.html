@@ -23,25 +23,25 @@
 			  //});
 			//}
 
-		    AFRAME.registerComponent('vidhandler', {
+		    <!--AFRAME.registerComponent('vidhandler', {
     
-				init: function () {
-					this.toggle = false;
-					this.vid = document.querySelector("#promotional")
-					this.vid.pause();
-				},
-				tick: function () {
-					if (this.el.object3D.visible == true) {
-						if (!this.toggle) {
-							this.toggle = true;
-							this.vid.play();
-						}
-					} else {
-						this.toggle = false;
-						this.vid.pause();
-					}
-				}
-			});
+				//init: function () {
+					//this.toggle = false;
+					//this.vid = document.querySelector("#promotional")
+					//this.vid.pause();
+				//},
+				//tick: function () {
+					//if (this.el.object3D.visible == true) {
+						//if (!this.toggle) {
+							//this.toggle = true;
+							//this.vid.play();
+						//}
+					//} else {
+						//this.toggle = false;
+						//this.vid.pause();
+					//}
+				//}
+			//});
 		  
 		</script>
 		
@@ -219,23 +219,10 @@
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
 				const btn = document.querySelector("#helmet-model");
-				const btn2 = document.querySelector("#helmet-model2");
-				const btn3 = document.querySelector(".btnVideo");
-				const btn4 = document.querySelector(".btnVideo2");
 				var v = document.querySelector("#promotional")
 				btn.addEventListener('click', () => {
 					v.play();
-				});
-				btn2.addEventListener('click', () =>{
-				   v.pause();
-				});
-				btn3.addEventListener('click', () => {
-					v.play();
-				});
-				btn4.addEventListener('click', () => {
-					v.pause();
-				});
-				
+				});		
 		}});
 	</script>
     </body>
