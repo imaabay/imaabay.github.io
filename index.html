@@ -13,10 +13,9 @@
 		
 		
 		<script>
-		  window.onload = function(){
-		    document.querySelector("#promotional").style.display="none";
-		  };
-		  
+		  $( document ).ready(function() {
+			$("#promotional").style.display="none";	
+		  });
 		</script>
 		
 
@@ -81,7 +80,7 @@
 				init: function() {
 				    const btn = document.querySelector("#helmet-model");
 					btn.addEventListener('click', () => {
-					    alert("Video 1");
+					    alert("Video 2");
 						document.querySelector("#promotional").style.display="block";
 					});
 			}});
