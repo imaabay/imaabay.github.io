@@ -14,7 +14,7 @@
 		
 		<script>
 		  $( document ).ready(function() {
-			$("#promotional").style.display="none";	
+			$("#promotional").hide();	
 		  });
 		</script>
 		
@@ -80,7 +80,7 @@
 				init: function() {
 				    const btn = document.querySelector("#helmet-model");
 					btn.addEventListener('click', () => {
-					    alert("Video 2");
+					    alert("Video 3");
 						document.querySelector("#promotional").style.display="block";
 					});
 			}});
