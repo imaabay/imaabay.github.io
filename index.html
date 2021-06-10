@@ -111,6 +111,11 @@
 	  </div>
 	 </div>-->
 	 
+	 <div class="buttons">
+      <button class="btnVideo">Start</button>
+    </div>
+	 
+	 
       <a-scene 
 	    embedded 
 		arjs
@@ -134,7 +139,7 @@
 		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/Box/glTF/Box.gltf"
 		>
 		</a-asset-item>
-		<video crossorigin="anonymous" id="promotional" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
+		<video crossorigin="anonymous" id="promotional" autoplay loop="true" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
@@ -147,7 +152,7 @@
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 	  >
-	    <a-video id="videoPlayer" src="#promotional" autoplay loop="true" width="5" height="3" rotation="270 0 0" position="2 2 2"></a-video>
+	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="2 2 2"></a-video>
         <a-entity
 		  id="helmet-model"
 		  clickhandler
@@ -186,6 +191,7 @@
 			init: function() {
 				const btn = document.querySelector("#helmet-model");
 				const btn2 = document.querySelector("#helmet-model2");
+				const btn3 = document.querySelector(".btnVideo");
 				var v = document.querySelector("#promotional")
 				btn.addEventListener('click', () => {
 					v.play();
@@ -193,6 +199,10 @@
 				btn2.addEventListener('click', () =>{
 				   v.pause();
 				});
+				btn3.addEventListener('click', () => {
+					v.play();
+				});
+				
 		}});
 	</script>
     </body>
