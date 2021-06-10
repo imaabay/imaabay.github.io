@@ -13,10 +13,11 @@
 		
 		
 		<script>
-		  $( document ).ready(function() {
+		  //$( document ).ready(function() {
 		   // alert("Hide 3");
-			("#videoPlayer").hide();	
-		  });
+			//("#videoPlayer").hide();	
+		  //});
+		  
 		</script>
 		
 
@@ -69,26 +70,9 @@
 			}
           </style>
     </header>
-	<script>
-		    //$( document ).ready(function() {
-				//$('#headerVideoLink').magnificPopup({
-				//type:'inline',
-				//midClick: true 
-				//});
-			//});
-			
-			AFRAME.registerComponent('clickhandler', {
-				init: function() {
-				    const btn = document.querySelector("#helmet-model");
-					btn.addEventListener('click', () => {
-					    alert("Video 8");
-						//document.getElementById("videoContainer").style.display="block";
-					});
-			}});
-			
-		</script>
+	
 
-    <body style="margin : 0px; overflow: hidden;">
+    <body style="margin : 0px; overflow: hidden;" onload="hideVideo()">
 	  <!--<div class="container">
 	   <div class="row">
 		<div class="col-sm-12">
@@ -172,6 +156,29 @@
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
+	
+	<script>
+		//$( document ).ready(function() {
+			//$('#headerVideoLink').magnificPopup({
+			//type:'inline',
+			//midClick: true 
+			//});
+		//});
+		
+		AFRAME.registerComponent('clickhandler', {
+			init: function() {
+				const btn = document.querySelector("#helmet-model");
+				btn.addEventListener('click', () => {
+					alert("Video 8");
+					//document.getElementById("videoContainer").style.display="block";
+				});
+		}});
+	  
+	  
+	  function hideVideo(){
+		document.querySelector(#videoPlayer).style.display="none";
+	  }
+	</script>
     </body>
 
 </html>
