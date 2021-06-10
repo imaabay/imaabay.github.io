@@ -131,8 +131,8 @@
 		>
 		
 		</a-asset-item>
-		<video crossorigin="anonymous" id="promotional" autoplay loop="true" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
-		<!--<iframe id="promotional" class="embed-responsive-item" width="854" height="480" src="https://www.youtube.com/embed/7t5gm5uA-RE?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+		<!--<video crossorigin="anonymous" id="promotional" src="video.mp4" type="video/mp4" preload="auto"  playsinline>-->
+		<iframe id="promotional" class="embed-responsive-item" width="854" height="480" src="https://www.youtube.com/embed/7t5gm5uA-RE?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
@@ -151,7 +151,15 @@
 		  clickhandler
 		  gltf-model="#box"
           position="0 0 0"
-          scale="3 3 3"
+          scale="1 1 1"
+		  gesture-handler
+        ></a-entity>
+		<a-entity
+		  id="helmet-model2"
+		  clickhandler
+		  gltf-model="#box"
+          position="2 2 2"
+          scale="1 1 1"
 		  gesture-handler
         ></a-entity>
       </a-marker>
@@ -175,9 +183,13 @@
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
 				const btn = document.querySelector("#helmet-model");
+				const btn2 = document.querySelector("#helmet-model2");
 				var v = document.querySelector("#promotional")
 				btn.addEventListener('click', () => {
 					v.play();
+				});
+				btn2.addEventListener('click', () =>{
+				   v.pause();
 				});
 		}});
 	</script>
