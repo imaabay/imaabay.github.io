@@ -13,9 +13,9 @@
 		
 		
 		<script>
-		  $( document ).load(function() {
-		    //alert("Hide 3");
-			("#videoContainer").show();	
+		  $( document ).ready(function() {
+		    alert("Hide 3");
+			//("#videoContainer").show();	
 		  });
 		</script>
 		
@@ -81,8 +81,8 @@
 				init: function() {
 				    const btn = document.querySelector("#helmet-model");
 					btn.addEventListener('click', () => {
-					    //alert("Video 6");
-						document.getElementById("videoContainer").style.display="block";
+					    alert("Video 7");
+						//document.getElementById("videoContainer").style.display="block";
 					});
 			}});
 			
@@ -122,7 +122,7 @@
 		>
 		
 		</a-asset-item>
-		<video id="promotional" src="https://www.youtube.com/embed/7t5gm5uA-RE?autoplay=1"></video>
+		<video id="promotional" src="video.mp4"></video>
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
