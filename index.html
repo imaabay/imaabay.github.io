@@ -1,5 +1,6 @@
 <html>
     <header>
+	    <meta name="apple-mobile-web-app-capable" content="yes">
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 		<!-- we import arjs version without NFT but with marker + location based support -->
 		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -72,7 +73,7 @@
     </header>
 	
 
-    <body style="margin : 0px; overflow: hidden;" onload="hideVideo()">
+    <body style="margin : 0px; overflow: hidden;" >
 	  <!--<div class="container">
 	   <div class="row">
 		<div class="col-sm-12">
@@ -106,7 +107,7 @@
 		>
 		
 		</a-asset-item>
-		<video id="promotional" src="video.mp4"></video>
+		<video id="promotional" autoplay loop="true" src="video.mp4" webkit-playsinline playsinline></video>
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
@@ -171,6 +172,8 @@
 				btn.addEventListener('click', () => {
 					alert("Video 9");
 					//document.getElementById("videoContainer").style.display="block";
+					$("#videoPlayer").show();
+		            $("#promotional").show();
 				});
 		}});
 	  
@@ -180,6 +183,11 @@
 		$("#videoPlayer").hide();
 		$("#promotional").hide();
 	  }
+	  
+	  $document.ready(function(){
+	    $("#videoPlayer").hide();
+		$("#promotional").hide();
+	  })
 	</script>
     </body>
 
