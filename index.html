@@ -14,8 +14,8 @@
 		
 		<script>
 		  $( document ).ready(function() {
-		    alert("Hide");
-			//$("#promotional").hide();	
+		    //alert("Hide");
+			("#promotional").hide();	
 		  });
 		</script>
 		
@@ -81,8 +81,8 @@
 				init: function() {
 				    const btn = document.querySelector("#helmet-model");
 					btn.addEventListener('click', () => {
-					    //alert("Video 3");
-						document.getElementById("promotional").style.display="none";
+					    alert("Video 4");
+						//document.getElementById("promotional").style.display="none";
 					});
 			}});
 			
@@ -135,7 +135,7 @@
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
 	  >
-	    <a-video src="#promotional" width="3" height="1" position="1 2 3"></a-video>
+	    <a-video src="#promotional" width="5" height="3" position="1 2 3"></a-video>
 		<!--<a-entity
 		  clickhandler
 		  id="box-model"
