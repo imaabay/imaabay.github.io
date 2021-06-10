@@ -12,15 +12,11 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
 		
 		
-		<!--<script>
+		<script>
 		  window.onload = function(){
-		    document
-			  .querySelector(".btn")
-			  .addEventListener("click", function() {
-			    window.location.replace("video.html");
-			  });
+		    document.getElementById("promotional").style.display="none";
 		  };
-		</script>-->
+		</script>
 		
 
         <style>
@@ -84,14 +80,14 @@
 				init: function() {
 				    const btn = document.querySelector("#helmet-model");
 					btn.addEventListener('click', () => {
-						alert('Clicked!')
+						document.getElementById("promotional").style.display="block";
 					});
 			}});
 			
 		</script>
 
     <body style="margin : 0px; overflow: hidden;">
-	  <!--<div class="container">
+	  <div class="container">
 	   <div class="row">
 		<div class="col-sm-12">
 		  <p class="text-center mt-2">
@@ -102,7 +98,7 @@
 		  </div>
 		</div>
 	  </div>
-	 </div>-->
+	 </div>
 	 
       <a-scene 
 	    embedded 
@@ -137,7 +133,7 @@
 		cursor="fuse: false; rayOrigin: mouse;"
 		id="markerA"
 	  >
-	    <!--<a-video src="#promotional" width="3" height="1" position="2 0.5 2"></a-video>-->
+	    <a-video src="#promotional" width="3" height="1" position="1 1 1"></a-video>
 		<!--<a-entity
 		  clickhandler
 		  id="box-model"
