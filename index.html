@@ -200,6 +200,7 @@
 		  gesture-handler
         ></a-entity>-->
 		<a-entity
+		  clickhandler
 		  id="helmet-model3"
 		  gltf-model="#scene1"
 		  rotation="270 0 0"
@@ -227,9 +228,9 @@
 		
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
-				const btn = document.querySelector("#helmet-model");
+				const btn = document.querySelector("#helmet-model3");
 				var v = document.querySelector("#promotional")
-				btn.addEventListener('click', () => {
+				btn.addEventListener('touchstart', () => {
 					v.play();
 				});		
 		}});
