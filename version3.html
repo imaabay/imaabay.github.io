@@ -132,12 +132,11 @@
 	 </div>-->
 	 
 	   <p class="text-center mt-0">
-		<a href="version3.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3</a>
+		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3</a>
 	  </p>
 	 
 	 
-      <a-scene
-        clickhandler	  
+      <a-scene  
 	    embedded 
 		arjs
 		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
@@ -169,6 +168,7 @@
 	  </a-assets>
 	  
 	  <a-marker 
+	    vidhandler
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-marker.patt"
@@ -194,8 +194,7 @@
           scale="3 3 3"
 		  gesture-handler
         ></a-entity>-->
-		<a-entity
-		  
+		<a-entity 
 		  id="helmet-model3"
 		  gltf-model="#scene1"
 		  rotation="270 0 0"
@@ -230,20 +229,20 @@
 		
 		
 		
-		AFRAME.registerComponent('clickhandler', {
-			init: function() {
-				const btn = document.querySelector("#scene");
-				var v = document.querySelector("#promotional");
-				btn.addEventListener('click', () => {
-					alert("Play Video");
-					v.play();
-				});	
-				btn.addEventListener('dblclick', () => {
-					alert("Pause Video");
-					v.pause();
-				});
-			}
-		});
+		//AFRAME.registerComponent('clickhandler', {
+			//init: function() {
+				//const btn = document.querySelector("#scene");
+				//var v = document.querySelector("#promotional");
+				//btn.addEventListener('click', () => {
+					//alert("Play Video");
+					//v.play();
+				//});	
+				//btn.addEventListener('dblclick', () => {
+					//alert("Pause Video");
+					//v.pause();
+				//});
+			//}
+		//});
 	</script>
     </body>
 
