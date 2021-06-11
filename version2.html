@@ -136,13 +136,13 @@
 	  </p>
 	 
 	 
-      <a-scene 
+      <a-scene
+        clickhandler	  
 	    embedded 
 		arjs
 		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
 		vr-mode-ui="enabled: false"
 		gesture-detector
-		pauseHandler
 		id="scene"
 	  >
 	  <a-assets>
@@ -195,7 +195,7 @@
 		  gesture-handler
         ></a-entity>-->
 		<a-entity
-		  clickhandler
+		  
 		  id="helmet-model3"
 		  gltf-model="#scene1"
 		  rotation="270 0 0"
@@ -218,21 +218,21 @@
 		  //var v = document.querySelector('#videoPlayer');
 		 // v.play();
 		//});
-		AFRAME.registerComponent('pauseHandler', {
-		  init: function() {
-		    const sc = document.querySelector("#scene");
-			var v = document.querySelector("#promotional");
-			sc.addEventListener('touchmove', ()=>{
-				v.pause();
-			});
-		  }
-		});
+		//AFRAME.registerComponent('pauseHandler', {
+		  //init: function() {
+		    //const sc = document.querySelector("#scene");
+			//var v = document.querySelector("#promotional");
+			//sc.addEventListener('touchmove', ()=>{
+				//v.pause();
+			//});
+		  //}
+		//});
 		
 		
 		
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
-				const btn = document.querySelector("#helmet-model3");
+				const btn = document.querySelector("#scene");
 				var v = document.querySelector("#promotional");
 				btn.addEventListener('click', () => {
 					v.play();
