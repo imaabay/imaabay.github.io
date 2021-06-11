@@ -1,255 +1,54 @@
-<html>
-    <header>
-	    <meta name="apple-mobile-web-app-capable" content="yes">
-        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-		<!-- we import arjs version without NFT but with marker + location based support -->
-		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-		<script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
-		<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css" rel="stylesheet">
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
-		
-		
-		<script>
-		
-		    //const sceneEl = document.querySelector('a-scene');
-			//if(sceneEl){
-			  //sceneEl.addEventListener('loaded', () => {
-			    //alert("In);
-				//sceneEl.camera = new THREE.PerspectiveCamera();
-			  //});
-			//}
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
-		    AFRAME.registerComponent('vidhandler', {
-    
-				init: function () {
-				    this.toggle = false;
-					this.vid = document.querySelector("#promotional")
-					this.vid.pause();
-				},
-				tick: function () {
-					if (this.el.object3D.visible == true) {
-						if (!this.toggle) {
-							this.toggle = true;
-							this.vid.play();
-						}
-					} else {
-						this.toggle = false;
-						this.vid.pause();
-					}
-				}
-			});
-		  
-		</script>
-		
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-        <style>
-            .arjs-loader {
-              height: 100%;
-              width: 100%;
-              position: absolute;
-              top: 0;
-              left: 0;
-              background-color: rgba(0, 0, 0, 0.8);
-              z-index: 9999;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
-          
-            .arjs-loader div {
-              text-align: center;
-              font-size: 1.25em;
-              color: white;
-            }
-			.buttons{
-			  display: flex;
-			  justify-content: center;
-			  align-items: center;
-			  position: absolute;
-			  bottom: 0;
-			  left: 0;
-			  width: 50%;
-			  height: 10em;
-			  z-index: 10;
-			}
-			.buttons2{
-			  display: flex;
-			  justify-content: right;
-			  align-items: right;
-			  position: absolute;
-			  bottom: 0;
-			  left: 0;
-			  width: 50%;
-			  height: 10em;
-			  z-index: 10;
-			}
-			.btnVideo{
-			  padding: 0.25em;
-			  border-radius: 5px;
-			  border: none;
-			  background: black;
-			  color: white;
-			  width: 35em;
-			  height: 2em;
-			}
-			.btnVideo2{
-			  padding: 0.25em;
-			  border-radius: 5px;
-			  border: none;
-			  background: black;
-			  color: white;
-			  width: 35em;
-			  height: 2em;
-			}
-			#headerPopup{
-			  width:75%;
-			  margin:0 auto;
-			}
-			#headerPopup iframe{
-			  width:100%;
-			  margin:0 auto;
-			}
-          </style>
-    </header>
-	
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+</style>
 
-    <body style="margin : 0px; overflow: hidden;" >
-	  <!--<div class="container">
-	   <div class="row">
-		<div class="col-sm-12">
-		  <p class="text-center mt-2">
-			<a href="#headerPopup" id="headerVideoLink" target="_blank" class="btn btn-outline-success popup-modal">Open</a>
-		  </p>
-		  <div id="headerPopup" class="mfp-hide embed-responsive embed-responsive-21by9">
-			<iframe class="embed-responsive-item" width="854" height="480" src="https://www.youtube.com/embed/7t5gm5uA-RE?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		  </div>
-		</div>
-	  </div>
-	 </div>-->
-	 
-	   <p class="text-center mt-0">
-		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 4</a>
-	  </p>
-	 
-	 
-      <a-scene  
-	    embedded 
-		arjs
-		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
-		vr-mode-ui="enabled: false"
-		gesture-detector
-		id="scene"
-	  >
-	  <a-assets>
-	    <a-asset-item
-		  id="scene1"
-		  src="scene.gltf"
-		>
-		<a-asset-item
-		  id="helmet"
-		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/BrainStem/glTF/BrainStem.gltf"
-		>
-		</a-asset-item>
-		<a-asset-item
-		  id="box"
-		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/BoxVertexColors/glTF/BoxVertexColors.gltf"
-		>
-		<a-asset-item
-		  id="box2"
-		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/Box/glTF/Box.gltf"
-		>
-		</a-asset-item>
-		<video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
-		<img id="btn_start" src="button_start.png">
-	  </a-assets>
-	  
-	  <a-marker 
-	    vidhandler
-	    type="pattern" 
-		preset="custom" 
-		url="pattern-marker.patt"
-		raycaster="objects: #helmet-model3"
-		emitevents="true"
-		cursor="fuse: false; rayOrigin: mouse;"
-		smooth="true" 
-		smoothCount="10" 
-		smoothTolerance="0.01" 
-		smoothThreshold="5"
-	  >
-	 
-	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="0 0 6" gesture-handler></a-video>
-        <!--<a-entity
-		  clickhandler
-		  id="helmet-model"
-		  gltf-model="#box"
-          position="2 0 4"
-          scale="0.9 0.9 0.9"
-		  gesture-handler
-        ></a-entity>-->
-		<!--<a-entity
-		  id="helmet-model2"
-		  clickhandler
-		  gltf-model="#box2"
-          position="3 -3 -3"
-          scale="3 3 3"
-		  gesture-handler
-        ></a-entity>-->
-		<a-entity 
-		  id="helmet-model3"
-		  gltf-model="#scene1"
-		  rotation="270 0 0"
-          position="0 0 3"
-          scale="0.08 0.08 0.08"
-		  gesture-handler
-        ></a-entity>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
-	
-	<script>
-		//$( document ).ready(function() {
-			//$('#headerVideoLink').magnificPopup({
-			//type:'inline',
-			//midClick: true 
-			//});
-		//});
-		//window.addEventListener('click', function () {
-		  //var v = document.querySelector('#videoPlayer');
-		 // v.play();
-		//});
-		//AFRAME.registerComponent('pauseHandler', {
-		  //init: function() {
-		    //const sc = document.querySelector("#scene");
-			//var v = document.querySelector("#promotional");
-			//sc.addEventListener('touchmove', ()=>{
-				//v.pause();
-			//});
-		  //}
-		//});
-		
-		
-		
-		//AFRAME.registerComponent('clickhandler', {
-			//init: function() {
-				//const btn = document.querySelector("#scene");
-				//var v = document.querySelector("#promotional");
-				//btn.addEventListener('click', () => {
-					//alert("Play Video");
-					//v.play();
-				//});	
-				//btn.addEventListener('dblclick', () => {
-					//alert("Pause Video");
-					//v.pause();
-				//});
-			//}
-		//});
-	</script>
-    </body>
-
-</html>
-
-
+<body style="margin : 0px; overflow: hidden;">
+  <!-- minimal loader shown until image descriptors are loaded -->
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+    <!-- we use cors proxy to avoid cross-origin problems -->
+    <a-nft
+      type="nft"
+      url="pattern-qr1.png"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+      <a-entity
+        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+        scale="5 5 5"
+        position="50 150 0"
+      >
+      </a-entity>
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
