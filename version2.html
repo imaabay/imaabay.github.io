@@ -235,9 +235,13 @@
 				const btn = document.querySelector("#scene");
 				var v = document.querySelector("#promotional");
 				btn.addEventListener('click', () => {
-					alert("Clicked");
+					alert("Play Video");
 					v.play();
 				});	
+				btn.addEventListener('dblclick', () => {
+					alert("Pause Video");
+					v.pause();
+				});
 			}
 		});
 	</script>
