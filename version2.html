@@ -23,25 +23,25 @@
 			  //});
 			//}
 
-		    <!--AFRAME.registerComponent('vidhandler', {
+		    AFRAME.registerComponent('vidhandler', {
     
-				//init: function () {
-					//this.toggle = false;
-					//this.vid = document.querySelector("#promotional")
-					//this.vid.pause();
-				//},
-				//tick: function () {
-					//if (this.el.object3D.visible == true) {
-						//if (!this.toggle) {
-							//this.toggle = true;
-							//this.vid.play();
-						//}
-					//} else {
-						//this.toggle = false;
-						//this.vid.pause();
-					//}
-				//}
-			//});
+				init: function () {
+				    this.toggle = false;
+					this.vid = document.querySelector("#promotional")
+					this.vid.pause();
+				},
+				tick: function () {
+					if (this.el.object3D.visible == true) {
+						if (!this.toggle) {
+							this.toggle = true;
+							this.vid.play();
+						}
+					} else {
+						this.toggle = false;
+						this.vid.pause();
+					}
+				}
+			});
 		  
 		</script>
 		
@@ -131,14 +131,8 @@
 	  </div>
 	 </div>-->
 	 
-	 <!--<div class="buttons">
-      <button class="btnVideo">Start</button>
-     </div>
-	 <div class="buttons2">
-      <button class="btnVideo2">Stop</button>
-     </div>-->
-	 <p class="text-center mt-2">
-		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 2</a>
+	   <p>
+		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3</a>
 	  </p>
 	 
 	 
@@ -174,23 +168,24 @@
 	  </a-assets>
 	  
 	  <a-marker 
+	    vidhandler
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-marker.patt"
-		raycaster="objects: [clickhandler]"
+		raycaster="objects: #helmet-model3"
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 	  >
 	 
-	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="0 0 7"></a-video>
-        <a-entity
+	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="0 0 6" gesture-handler></a-video>
+        <!--<a-entity
 		  clickhandler
 		  id="helmet-model"
 		  gltf-model="#box"
           position="2 0 4"
           scale="0.9 0.9 0.9"
 		  gesture-handler
-        ></a-entity>
+        ></a-entity>-->
 		<!--<a-entity
 		  id="helmet-model2"
 		  clickhandler
@@ -203,9 +198,9 @@
 		  clickhandler
 		  id="helmet-model3"
 		  gltf-model="#scene1"
-		  rotation="270 0 90"
-          position="0 0 4"
-          scale="0.2 0.2 0.2"
+		  rotation="270 0 0"
+          position="0 0 3"
+          scale="0.08 0.08 0.08"
 		  gesture-handler
         ></a-entity>
       </a-marker>
@@ -230,7 +225,7 @@
 			init: function() {
 				const btn = document.querySelector("#helmet-model3");
 				var v = document.querySelector("#promotional")
-				btn.addEventListener('touchstart', () => {
+				btn.addEventListener('click', () => {
 					v.play();
 				});		
 		}});
@@ -238,8 +233,5 @@
     </body>
 
 </html>
-
-
-
 
 
