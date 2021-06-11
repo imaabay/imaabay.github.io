@@ -142,6 +142,7 @@
 		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
 		vr-mode-ui="enabled: false"
 		gesture-detector
+		pauseHandler
 		id="scene"
 	  >
 	  <a-assets>
@@ -168,7 +169,6 @@
 	  </a-assets>
 	  
 	  <a-marker 
-	    vidhandler
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-marker.patt"
@@ -218,17 +218,27 @@
 		  //var v = document.querySelector('#videoPlayer');
 		 // v.play();
 		//});
+		AFRAME.registerComponent('pauseHandler', {
+		  init: function() {
+		    const sc = document.querySelector("#scene");
+			var v = document.querySelector("#promotional");
+			sc.addEventListener('touchmove', ()=>{
+				v.pause();
+			});
+		  }
+		});
 		
 		
 		
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
 				const btn = document.querySelector("#helmet-model3");
-				var v = document.querySelector("#promotional")
+				var v = document.querySelector("#promotional");
 				btn.addEventListener('click', () => {
 					v.play();
-				});		
-		}});
+				});	
+			}
+		});
 	</script>
     </body>
 
