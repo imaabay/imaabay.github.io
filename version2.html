@@ -13,9 +13,9 @@
   <script src="threex/threex-artoolkitcontext.js"></script>
   <script src="threex/threex-arbasecontrols.js"></script>
   <script src="threex/threex-armarkercontrols.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  
+  <script src="controls/OrbitControls.js"></script>
+
 </head>
 <body style="margin : 0px; overflow: hidden;">
   <script>
@@ -44,9 +44,6 @@
 		//const far = 100;			
 		camera = new THREE.Camera();
 		scene.add(camera);
-		
-		var obitControls = new THREE.OrbitControls(camera);		
-        obitControls.update();
 
 		renderer = new THREE.WebGLRenderer({
 			antialias : true,
@@ -60,6 +57,8 @@
 		renderer.domElement.style.top = '0px'
 		renderer.domElement.style.left = '0px'
 		document.body.appendChild( renderer.domElement );
+		
+		obitControls = new THREE.OrbitControls(camera, renderer.domElement);	
 
 		clock = new THREE.Clock();
 		deltaTime = 0;
@@ -158,6 +157,7 @@
 	function render()
 	{
 		renderer.render( scene, camera );
+		//controls.update();
 	}
 
 
