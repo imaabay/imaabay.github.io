@@ -21,28 +21,7 @@
 			    //alert("In);
 				//sceneEl.camera = new THREE.PerspectiveCamera();
 			  //});
-			//}
-
-		    AFRAME.registerComponent('vidhandler', {
-    
-				init: function () {
-				    this.toggle = false;
-					this.vid = document.querySelector("#promotional")
-					this.vid.pause();
-				},
-				tick: function () {
-					if (this.el.object3D.visible == true) {
-						if (!this.toggle) {
-							this.toggle = true;
-							this.vid.play();
-						}
-					} else {
-						this.toggle = false;
-						this.vid.pause();
-					}
-				}
-			});
-		  
+			//}		  
 		</script>
 		
 
@@ -175,6 +154,10 @@
 		raycaster="objects: #helmet-model3"
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
+		smooth="true" 
+		smoothCount="20" 
+		smoothTolerance="1.5" 
+		smoothThreshold="10"
 	  >
 	 
 	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="0 0 6" gesture-handler></a-video>
