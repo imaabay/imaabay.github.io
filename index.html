@@ -3,7 +3,7 @@
 	    <meta name="apple-mobile-web-app-capable" content="yes">
         <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 		<!-- we import arjs version without NFT but with marker + location based support -->
-		<script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar.js"></script>
+		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 		<script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
 		<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
       <a-scene 
 	    embedded 
 		arjs
-		renderer="antialias:true; logarithmicDepthBuffer:true; alpha:true; preserveDrawingBuffer:true;"
+		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
 		vr-mode-ui="enabled: false"
 		gesture-detector
 		id="scene"
