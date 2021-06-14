@@ -199,11 +199,12 @@
 		<a-entity
 		  clickhandler
 		  id="helmet-model3"
-		  gltf-model="#scene1"
-          position="0 0 0"
-          scale="0.09 0.09 0.09"
 		  gesture-handler="minScale: 1; maxScale: 1.5"
-        ></a-entity>
+        >
+		  <a-gltf-model rotation="0 0 0 " position="0 0 0" scale="0.005 0.005 0.005" src="#scene1"
+		  animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+		>
+		</a-entity>
       </a-anchor>
       <a-entity camera></a-entity>
     </a-scene>
