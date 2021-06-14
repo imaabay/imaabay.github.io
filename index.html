@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <script src='threejs/three.js'></script>
-  <script src='https://rawcdn.githack.com/mrdoob/three.js/r86/examples/js/loaders/GLTFLoader.js'></script>
+  <script src='https://rawcdn.githack.com/mrdoob/three.js/r129/build/three.min.js'></script>
+  <script src='https://rawcdn.githack.com/mrdoob/three.js/r129/examples/js/loaders/GLTFLoader.js'></script>
   
   <script src="jsartoolkit5/artoolkit.min.js"></script>
   <script src="jsartoolkit5/artoolkit.api.js"></script>
@@ -32,8 +32,12 @@
 
 		let ambientLight = new THREE.AmbientLight( 0xcccccc, 1.0 );
 		scene.add( ambientLight );
-					
-		camera = new THREE.PerspectiveCamera( 45, width / height, 1, 1000 );
+		
+		const fov = 45;
+		const aspect = 2;  // the canvas default
+		const near = 0.1;
+		const far = 100;			
+		camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
 		scene.add(camera);
 
 		renderer = new THREE.WebGLRenderer({
