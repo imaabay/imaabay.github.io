@@ -56,7 +56,7 @@
 		renderer.domElement.style.left = '0px'
 		document.body.appendChild( renderer.domElement );
 		
-		//obitControls = new THREE.OrbitControls(camera, renderer.domElement);	
+		obitControls = new OrbitControls(camera, renderer.domElement);	
 
 		clock = new THREE.Clock();
 		deltaTime = 0;
@@ -154,8 +154,8 @@
 
 	function render()
 	{
+	    obitControls.update();
 		renderer.render( scene, camera );
-		//controls.update();
 	}
 
 
