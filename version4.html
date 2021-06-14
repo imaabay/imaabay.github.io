@@ -23,25 +23,25 @@
 			  //});
 			//}
 
-		    <!--AFRAME.registerComponent('vidhandler', {
+		    AFRAME.registerComponent('vidhandler', {
     
-				//init: function () {
-					//this.toggle = false;
-					//this.vid = document.querySelector("#promotional")
-					//this.vid.pause();
-				//},
-				//tick: function () {
-					//if (this.el.object3D.visible == true) {
-						//if (!this.toggle) {
-							//this.toggle = true;
-							//this.vid.play();
-						//}
-					//} else {
-						//this.toggle = false;
-						//this.vid.pause();
-					//}
-				//}
-			//});
+				init: function () {
+				    this.toggle = false;
+					this.vid = document.querySelector("#promotional")
+					this.vid.pause();
+				},
+				tick: function () {
+					if (this.el.object3D.visible == true) {
+						if (!this.toggle) {
+							this.toggle = true;
+							this.vid.play();
+						}
+					} else {
+						this.toggle = false;
+						this.vid.pause();
+					}
+				}
+			});
 		  
 		</script>
 		
@@ -131,12 +131,13 @@
 	  </div>
 	 </div>-->
 	 
-	  <p class="text-center mt-0" >
-		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 2</a>
+	   <p class="text-center mt-0">
+		<a href="version3.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3</a>
 	  </p>
 	 
 	 
-      <a-scene 
+      <a-scene
+        clickhandler	  
 	    embedded 
 		arjs
 		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
@@ -167,17 +168,13 @@
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  
-	  <a-anchor 
+	  <a-marker 
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-marker.patt"
-		raycaster="objects: #helmet-model3"
+		raycaster="objects: #scene"
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
-		smooth="true" 
-		smoothCount="15" 
-		smoothTolerance="0.02" 
-		smoothThreshold="8"
 	  >
 	 
 	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="0 0 6" gesture-handler></a-video>
@@ -198,7 +195,7 @@
 		  gesture-handler
         ></a-entity>-->
 		<a-entity
-		  clickhandler
+		  
 		  id="helmet-model3"
 		  gltf-model="#scene1"
 		  rotation="270 0 0"
@@ -206,7 +203,7 @@
           scale="0.08 0.08 0.08"
 		  gesture-handler
         ></a-entity>
-      </a-anchor>
+      </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
 	
@@ -221,17 +218,32 @@
 		  //var v = document.querySelector('#videoPlayer');
 		 // v.play();
 		//});
+		//AFRAME.registerComponent('pauseHandler', {
+		  //init: function() {
+		    //const sc = document.querySelector("#scene");
+			//var v = document.querySelector("#promotional");
+			//sc.addEventListener('touchmove', ()=>{
+				//v.pause();
+			//});
+		  //}
+		//});
 		
 		
 		
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
-				const btn = document.querySelector("#helmet-model3");
-				var v = document.querySelector("#promotional")
+				const btn = document.querySelector("#scene");
+				var v = document.querySelector("#promotional");
 				btn.addEventListener('click', () => {
+					alert("Play Video");
 					v.play();
-				});		
-		}});
+				});	
+				//btn.addEventListener('dblclick', () => {
+					//alert("Pause Video");
+					//v.pause();
+				//});
+			}
+		});
 	</script>
     </body>
 
