@@ -13,6 +13,7 @@
   <script src="threex/threex-armarkercontrols.js"></script>
 </head>
 <body>
+  <p><a href="version2.html" id="headerVideoLink">Version 2</a><p>
   <script>
     var scene, camera, renderer, clock, deltaTime, totalTime;
 
@@ -33,11 +34,11 @@
 		let ambientLight = new THREE.AmbientLight( 0xcccccc, 1.0 );
 		scene.add( ambientLight );
 		
-		const fov = 45;
-		const aspect = 2;  
-		const near = 0.1;
-		const far = 100;			
-		camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+		//const fov = 45;
+		//const aspect = 2;  
+		//const near = 0.1;
+		//const far = 100;			
+		camera = new THREE.Camera();
 		scene.add(camera);
 
 		renderer = new THREE.WebGLRenderer({
@@ -125,7 +126,7 @@
 				//mesh0.material.side = THREE.DoubleSide;
 				mesh0.position.y = 0.25;
 				mesh0.scale.set(0.25,0.25,0.25);
-				markerRoot1.add(gltf.scene);
+				markerRoot1.add(mesh0);
 			}, onProgress, onError );
 	}
 
@@ -156,6 +157,6 @@
   </script>
   
  
-   <a href="version2.html" id="headerVideoLink">Version 2</a>
+   
 </body>
 </html>
