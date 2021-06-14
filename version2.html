@@ -13,8 +13,6 @@
   <script src="threex/threex-artoolkitcontext.js"></script>
   <script src="threex/threex-arbasecontrols.js"></script>
   <script src="threex/threex-armarkercontrols.js"></script>
-  
-  <script src="controls/OrbitControls.js"></script>
 
 </head>
 <body style="margin : 0px; overflow: hidden;">
@@ -58,7 +56,7 @@
 		renderer.domElement.style.left = '0px'
 		document.body.appendChild( renderer.domElement );
 		
-		obitControls = new THREE.OrbitControls(camera, renderer.domElement);	
+		//obitControls = new THREE.OrbitControls(camera, renderer.domElement);	
 
 		clock = new THREE.Clock();
 		deltaTime = 0;
@@ -138,7 +136,7 @@
 				.load( 'fish-2.obj', function ( group ) {
 					mesh0 = group.children[0];
 					mesh0.material.side = THREE.DoubleSide;
-					mesh0.position.y = 1;
+					mesh0.position.y = 2;
 					mesh0.scale.set(1,1,1);
 					markerRoot1.add(mesh0);
 				}, onProgress, onError );
