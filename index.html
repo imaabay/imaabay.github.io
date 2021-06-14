@@ -131,7 +131,7 @@
 	 </div>-->
 	 
 	  <p class="text-center mt-0" >
-		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 2</a>
+		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 2.1</a>
 	  </p>
 	 
 	 
@@ -179,7 +179,7 @@
 		smoothThreshold="8"
 	  >
 	 
-	    <a-video id="videoPlayer" src="#promotional" width="5" height="3" rotation="270 0 0" position="0 0 6" gesture-handler></a-video>
+	    <a-video id="videoPlayer" src="#promotional" width="6" height="4" rotation="270 0 0" position="0 0 5" gesture-handler></a-video>
         <!--<a-entity
 		  clickhandler
 		  id="helmet-model"
@@ -200,10 +200,9 @@
 		  clickhandler
 		  id="helmet-model3"
 		  gltf-model="#scene1"
-		  rotation="270 0 0"
-          position="0 0 3"
-          scale="0.08 0.08 0.08"
-		  gesture-handler
+          position="0 0 0"
+          scale="0.09 0.09 0.09"
+		  gesture-handler="minScale: 0.07; maxScale: 1.5"
         ></a-entity>
       </a-anchor>
       <a-entity camera></a-entity>
