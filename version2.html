@@ -44,6 +44,9 @@
 		//const far = 100;			
 		camera = new THREE.Camera();
 		scene.add(camera);
+		
+		var obitControls = new THREE.OrbitControls(camera);		
+        obitControls.update();
 
 		renderer = new THREE.WebGLRenderer({
 			antialias : true,
