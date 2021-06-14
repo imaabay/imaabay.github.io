@@ -42,20 +42,6 @@
 					//}
 				//}
 			//});
-			AFRAME.registerComponent('renderer', {
-				init: function () {
-					var antialias = this.el.getAttribute('antialias') === 'true';
-					this.el.renderer = new THREE.WebGLRenderer({ canvas: this.el.canvas, antialias: antialias || window.hasNativeWebVRImplementation, logarithmicDepthBuffer: true, alpha: true, preserveDrawingBuffer: true });
-					this.el.renderer.setPixelRatio(window.devicePixelRatio);
-					this.el.renderer.sortObjects = false;
-					this.el.effect = new THREE.VREffect(this.el.renderer);
-				},
-				remove: function () {
-					var antialias = this.el.getAttribute('antialias') === 'true';
-					this.el.renderer = new THREE.WebGLRenderer({ canvas: this.el.canvas, antialias: antialias || window.hasNativeWebVRImplementation, logarithmicDepthBuffer: true, alpha: true, preserveDrawingBuffer: false });
-				}
-			});
-		  
 		</script>
 		
 
@@ -152,7 +138,7 @@
       <a-scene 
 	    embedded 
 		arjs
-		renderer="antialias: true;"
+		renderer="antialias:true, logarithmicDepthBuffer:true, alpha:true, preserveDrawingBuffer:true "
 		vr-mode-ui="enabled: false"
 		gesture-detector
 		id="scene"
