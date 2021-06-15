@@ -23,25 +23,33 @@
 			  //});
 			//}
 
-		    <!--AFRAME.registerComponent('vidhandler', {
-    
-				//init: function () {
-					//this.toggle = false;
-					//this.vid = document.querySelector("#promotional")
-					//this.vid.pause();
-				//},
-				//tick: function () {
-					//if (this.el.object3D.visible == true) {
-						//if (!this.toggle) {
-							//this.toggle = true;
-							//this.vid.play();
-						//}
-					//} else {
-						//this.toggle = false;
-						//this.vid.pause();
-					//}
-				//}
-			//});
+		    AFRAME.registerComponent("listener", {
+				init: function() {
+					this.target = document.querySelector('#helmet-model3');
+					this.prevPosition = null;
+					this.prevRotation = null;
+				},
+				tick: function() {
+					if (this.el.object3D.visible) {
+					this.target.setAttribute('visible', 'true')
+					if(this.prevPosition) {
+						this.target.object3D.position.lerp(this.prevPosition, 0.1)
+						let rot = this.target.object3D.rotation.toVector3().lerp(this.prevRotation, 0.1)
+						this.target.object3D.rotation.setFromVector3(rot)
+					} else {
+						this.target.setAttribute('position', this.el.getAttribute('position'))
+						this.target.setAttribute('rotation', this.el.getAttribute('rotation'))
+					}
+					this.prevPosition = this.el.object3D.position
+					this.prevRotation = this.el.object3D.rotation
+
+					} else {
+					this.target.setAttribute('visible', 'false')
+					this.prevPosition = null;
+					this.prevRotation = null;
+					}
+				}
+			})
 		</script>
 		
 
@@ -131,7 +139,7 @@
 	 </div>-->
 	 
 	  <p class="text-center mt-0" >
-		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 2.98</a>
+		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 2.99</a>
 	  </p>
 	 
 	 
@@ -177,6 +185,7 @@
 		smoothCount="20" 
 		smoothTolerance="1.5" 
 		smoothThreshold="10"
+		listener
 	  >
 	    <a-text value="Tap on 3D model to play video" rotation="268 0 0" position="0 0 1"></a-text>
 	    <a-video id="videoPlayer" src="#promotional" width="8" height="4" rotation="268 0 0" position="0 0 4"></a-video>
