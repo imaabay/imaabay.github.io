@@ -100,7 +100,7 @@
 	 
       <a-scene 
 	    embedded 
-		arjs
+		arjs = "sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
 		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
 		vr-mode-ui="enabled: false"
 		id="scene"
@@ -138,7 +138,7 @@
         >
 		</a-entity>
       </a-marker>
-	  <a-entity id='camera1' camera='near:0.1; far:50000; fov:80;' arjs-look-controls='smoothingFactor: 0.2'></a-entity>
+	  <a-entity camera></a-entity>
     </a-scene>
 	
 	<script>
