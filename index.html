@@ -114,7 +114,6 @@
 		<video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
-	  <a-camera camera wasd-controls="acceleration: 10"></a-camera>
 	  <a-marker
 	    type="pattern" 
 		preset="custom" 
@@ -136,7 +135,7 @@
         >
 		</a-entity>
       </a-marker>
-	</a-camera>
+	  <a-entity camera></a-entity>
     </a-scene>
 	
 	<script>
