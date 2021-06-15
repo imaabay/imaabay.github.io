@@ -16,9 +16,9 @@
  
   <style>
     model-viewer{
-      height : 400px;
-      width : 600px;
-	  margin: 0 auto;
+      height : 200px;
+      width : 300px;
+	    margin: 0 auto;
     }
 	#model-container{
 	  display: flex;
@@ -67,16 +67,11 @@
   }
     
   </style>
+  <model-viewer src="/models/shiba/scene.gltf" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look fallback" camera-controls alt="A 3D model of a dog" ios-src="Shiba.usdz">
+	</model-viewer>
 
 </head>
 <body>
- 
-  <model-viewer src="/models/shiba/scene.gltf" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look fallback" camera-controls alt="A 3D model of a dog" ios-src="Shiba.usdz">
-	 <video width="200" height="140" controls class="video-container">
-		<source src="video.mp4" type="video/mp4">
-		Your browser does not support the video tag.
-	 </video>
-	</model-viewer> 
   <a-scene
     clickhandler	  
 	  embedded 
@@ -109,7 +104,6 @@
 
     <!-- <p class="text-center mt-2">
       <a href="version3.html" id="headerVideoLink" target="_self" class="btn btn-outline-success">Play Video</a>
-    </p>	 -->
-  
+    </p>	 -->  
 </body>
 </html>
