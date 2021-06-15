@@ -25,17 +25,53 @@
 	  z-index: 10;
 	  background-color: #eee;
 	}
+  button{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: blue;
+    box-sizing: border-box;
+  }
+
+  button[slot="hotspot-hand"]{
+    --min-hotspot-opacity: 0;
+    background-color: white;
+  }
+
+  button[slot="hotspot-foot"]:not([data-visible]) {
+    background-color: transparent;
+    border: 3px solid blue;
+  }
+
+  #annotation{
+    background-color: #888888;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined) > * {
+    display: none;
+  }
+
+  .video-container{
+    display: none;
+  }
     
   </style>
 
 </head>
 <body>
  
-    <model-viewer src="/models/shiba/scene.gltf" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look fallback" camera-controls alt="A 3D model of a dog" ios-src="Shiba.usdz">
-	 <video width="200" height="140" controls>
+  <model-viewer src="/models/shiba/scene.gltf" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look fallback" camera-controls alt="A 3D model of a dog" ios-src="Shiba.usdz">
+	 <video width="200" height="140" controls class="video-container">
 		<source src="video.mp4" type="video/mp4">
 		Your browser does not support the video tag.
 	 </video>
+   <button slot="hotspot-hand" data-position="0.16 0.1 0.17" data-normal="-0.07 0.97 0.23" data-visibility-attribute="visible"></button>
 	</model-viewer> 
 
     <p class="text-center mt-2">
