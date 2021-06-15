@@ -67,43 +67,13 @@
   }
     
   </style>
-  <model-viewer src="/models/shiba/scene.gltf" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look fallback" camera-controls alt="A 3D model of a dog" ios-src="Shiba.usdz">
-	</model-viewer>
-
 </head>
 <body>
-  <a-scene
-    clickhandler	  
-	  embedded 
-		arjs
-		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
-		vr-mode-ui="enabled: false"
-		gesture-detector
-		id="scene"
-	  >
-	  <a-assets>
-		<video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
-	  </a-assets>
-	  
-	  <a-marker 
-	    type="pattern" 
-		  preset="custom" 
-		  url="pattern-marker.patt"
-		  raycaster="objects: #videoPlayer"
-		  emitevents="true"
-		  cursor="fuse: false; rayOrigin: mouse;"
-		  smooth="true" 
-		  smoothCount="20" 
-		  smoothTolerance="1.5" 
-		  smoothThreshold="10"
-	  >
-	    <a-video clickhandler id="videoPlayer" src="#promotional" width="8" height="4" rotation="270 0 0" position="0 0 0" gesture-handler></a-video>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
-
-    <!-- <p class="text-center mt-2">
+  <model-viewer src="/models/shiba/scene.gltf" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look fallback" camera-controls alt="A 3D model of a dog" ios-src="Shiba.usdz">
+	</model-viewer>
+  
+    <p class="text-center mt-2">
       <a href="version3.html" id="headerVideoLink" target="_self" class="btn btn-outline-success">Play Video</a>
-    </p>	 -->  
+    </p>	  
 </body>
 </html>
