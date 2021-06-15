@@ -1,7 +1,43 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+ 
+  <style>
+    model-viewer{
+      height : 400px;
+      width : 600px;
+	  margin: 0 auto;
+    }
+	#model-container{
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  position: absolute;
+	  width: 50%;
+	  height: 30%;
+	  z-index: 10;
+	  background-color: #eee;
+	}
+    
+  </style>
+
+</head>
+<body>
+ 
+    <model-viewer src="/models/shiba/scene.gltf" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look fallback" camera-controls alt="A 3D model of a dog" ios-src="Shiba.usdz">
+	 <video width="200" height="140" controls>
+		<source src="video.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	 </video>
+	</model-viewer> 
+
+    <!--<p class="text-center mt-0">
+      <a href="version3.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3.1</a>
+    </p>--->	
   
-<model-viewer src="/models/shiba/scene.gltf" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look fallback" camera-controls alt="A 3D model of a dog" ios-src="Shiba.usdz">
- <video width="200" height="140" controls>
-	<source src="video.mp4" type="video/mp4">
-	Your browser does not support the video tag.
- </video>
-</model-viewer>     
+</body>
+</html>
