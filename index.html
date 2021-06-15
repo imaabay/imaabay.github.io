@@ -200,27 +200,16 @@
 		  clickhandler
 		  id="helmet-model3"
 		  gesture-handler="minScale: 1; maxScale: 1.5"
+		  gltf-model="#scene1"
+		  position="0 0 0"
+		  scale="0.01 0.01 0.01"
         >
-		  <a-gltf-model rotation="0 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#scene1">
 		</a-entity>
       </a-anchor>
       <a-entity camera></a-entity>
     </a-scene>
 	
 	<script>
-		//$( document ).ready(function() {
-			//$('#headerVideoLink').magnificPopup({
-			//type:'inline',
-			//midClick: true 
-			//});
-		//});
-		//window.addEventListener('click', function () {
-		  //var v = document.querySelector('#videoPlayer');
-		 // v.play();
-		//});
-		
-		
-		
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
 				const btn = document.querySelector("#helmet-model3");
