@@ -8,10 +8,6 @@
   
   <style>
     model-viewer{
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  position: relative;
       height : 350px;
       width : 350px;
     }
@@ -33,13 +29,13 @@
   <p class="text-center mt-0">
     <a href="version3.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3</a>
   </p>
-  <div id="model-container">
+ 
     <model-viewer src="/models/shiba/scene.gltf" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look fallback" camera-controls alt="A 3D model of a dog" ios-src="Shiba.usdz">
-	 <video width="320" height="240" controls>
+	 <video width="200" height="140" controls>
 		<source src="video.mp4" type="video/mp4">
 		Your browser does not support the video tag.
 	 </video>
 	</model-viewer>  
-  </div>
+  
 </body>
 </html>
