@@ -118,7 +118,7 @@
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-qr1.patt"
-		raycaster="objects: #helmet-model3"
+		raycaster="objects: #helmet-model3; near: 0; far: 50000;"
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 		smooth="true" 
@@ -135,7 +135,7 @@
         >
 		</a-entity>
       </a-marker>
-	  <a-entity camera></a-entity>
+	  <a-entity id='camera1' camera='near:0.1; far:50000; fov:80;' arjs-look-controls='smoothingFactor: 0.1' gps-projected-camera='gpsMinDistance: 5'></a-entity>
     </a-scene>
 	
 	<script>
