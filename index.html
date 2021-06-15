@@ -18,55 +18,6 @@
 		
 		<script>
 		
-		AFRAME.registerComponent("registerevents", {
-        init: function () {
-          var element = document.querySelector("body");
-          this.marker = document.querySelector("a-marker");
-          var model = document.getElementById("bottle");
-
-          this.marker.addEventListener("markerFound", () => {
-            // alert("Marker found");
-          });
-          this.marker.addEventListener("markerLost", () => {
-            // alert("Marker Lost");
-          });
-
-          var hammertime = new Hammer(element);
-          var pinch = new Hammer.Pinch(); // Pinch is not by default in the recognisers
-          hammertime.add(pinch); // add it to the Manager instance
-
-          hammertime.on("pan", (ev) => {
-            let rotation = model.getAttribute("rotation");
-            switch (ev.direction) {
-              case 2:
-                rotation.y = rotation.y + 6;
-                break;
-              case 4:
-                rotation.y = rotation.y - 6;
-                break;
-              case 8:
-                rotation.x = rotation.x + 6;
-                break;
-              case 16:
-                rotation.x = rotation.x - 6;
-                break;
-              default:
-                break;
-            }
-            model.setAttribute("rotation", rotation);
-          });
-
-          hammertime.on("pinch", (ev) => {
-            let scale = {
-              x: ev.scale * 0.05,
-              y: ev.scale * 0.05,
-              z: ev.scale * 0.05,
-            };
-            // alert(scale);
-            model.setAttribute("scale", scale);
-          });
-        },
-      });
 		</script>
 		
 
@@ -141,22 +92,9 @@
     </header>
 	
 
-    <body style="margin : 0px; overflow: hidden;" >
-	  <!--<div class="container">
-	   <div class="row">
-		<div class="col-sm-12">
-		  <p class="text-center mt-2">
-			<a href="#headerPopup" id="headerVideoLink" target="_blank" class="btn btn-outline-success popup-modal">Open</a>
-		  </p>
-		  <div id="headerPopup" class="mfp-hide embed-responsive embed-responsive-21by9">
-			<iframe class="embed-responsive-item" width="854" height="480" src="https://www.youtube.com/embed/7t5gm5uA-RE?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		  </div>
-		</div>
-	  </div>
-	 </div>-->
-	 
+    <body style="margin : 0px; overflow: hidden;" >	 
 	  <p class="text-center mt-0" >
-		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3.1</a>
+		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3.3</a>
 	  </p>
 	 
 	 
@@ -166,32 +104,18 @@
 		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
 		vr-mode-ui="enabled: false"
 		id="scene"
+		gesture-detector
 	  >
 	  <a-assets>
 	    <a-asset-item
 		  id="scene1"
 		  src="scene.gltf"
 		>
-		<a-asset-item
-		  id="helmet"
-		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/BrainStem/glTF/BrainStem.gltf"
-		>
-		</a-asset-item>
-		<a-asset-item
-		  id="box"
-		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/BoxVertexColors/glTF/BoxVertexColors.gltf"
-		>
-		<a-asset-item
-		  id="box2"
-		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/Box/glTF/Box.gltf"
-		>
-		</a-asset-item>
 		<video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  <a-camera camera wasd-controls="acceleration: 10"></a-camera>
 	  <a-marker
-	    registerevents 
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-qr1.patt"
@@ -207,7 +131,8 @@
 		  id="helmet-model3"
 		  gltf-model="#scene1"
 		  position="0 0 0"
-		  scale="0.08 0.08 0.08"
+		  scale="0.05 0.05 0.05"
+		  gesture-handler
         >
 		</a-entity>
       </a-marker>
