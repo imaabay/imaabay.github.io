@@ -76,9 +76,10 @@
 		<source src="video.mp4" type="video/mp4">
 		Your browser does not support the video tag.
 	 </video>
-   <a-scene
-        clickhandler	  
-	    embedded 
+	</model-viewer> 
+  <a-scene
+    clickhandler	  
+	  embedded 
 		arjs
 		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
 		vr-mode-ui="enabled: false"
@@ -91,26 +92,24 @@
 	  
 	  <a-marker 
 	    type="pattern" 
-		preset="custom" 
-		url="pattern-marker.patt"
-		raycaster="objects: #videoPlayer"
-		emitevents="true"
-		cursor="fuse: false; rayOrigin: mouse;"
-		smooth="true" 
-		smoothCount="20" 
-		smoothTolerance="1.5" 
-		smoothThreshold="10"
+		  preset="custom" 
+		  url="pattern-marker.patt"
+		  raycaster="objects: #videoPlayer"
+		  emitevents="true"
+		  cursor="fuse: false; rayOrigin: mouse;"
+		  smooth="true" 
+		  smoothCount="20" 
+		  smoothTolerance="1.5" 
+		  smoothThreshold="10"
 	  >
-	 
 	    <a-video clickhandler id="videoPlayer" src="#promotional" width="8" height="4" rotation="270 0 0" position="0 0 0" gesture-handler></a-video>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
-	</model-viewer> 
 
-    <p class="text-center mt-2">
+    <!-- <p class="text-center mt-2">
       <a href="version3.html" id="headerVideoLink" target="_self" class="btn btn-outline-success">Play Video</a>
-    </p>	
+    </p>	 -->
   
 </body>
 </html>
