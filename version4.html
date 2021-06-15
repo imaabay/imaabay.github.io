@@ -21,12 +21,12 @@
 		  src="scene.gltf"
 		>
       </a-assets>
-
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
+	  <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       <a-entity mindar-image-target="targetIndex: 0">
-		<a-plane src="#promotional" position="1 1 1" height="0.01" width="0.01" rotation="0 0 0"></a-plane>
-		<a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.05 0.05 0.05" src="#scene1" gesture-handler
+		<a-video src="#promotional" position="1 1 1" height="0.01" width="0.01" rotation="0 0 0"></a-video>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 0">
+		<a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.03 0.03 0.03" src="#scene1" gesture-handler
 		>
       </a-entity>
     </a-scene>
