@@ -11,17 +11,62 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
-		
+		<script
+      		type="application/javascript"
+      		src="https://hammerjs.github.io/dist/hammer.min.js"
+    	></script>
 		
 		<script>
 		
-		    //const sceneEl = document.querySelector('a-scene');
-			//if(sceneEl){
-			  //sceneEl.addEventListener('loaded', () => {
-			    //alert("In);
-				//sceneEl.camera = new THREE.PerspectiveCamera();
-			  //});
-			//}
+		AFRAME.registerComponent("registerevents", {
+        init: function () {
+          var element = document.querySelector("body");
+          this.marker = document.querySelector("a-marker");
+          var model = document.getElementById("bottle");
+
+          this.marker.addEventListener("markerFound", () => {
+            // alert("Marker found");
+          });
+          this.marker.addEventListener("markerLost", () => {
+            // alert("Marker Lost");
+          });
+
+          var hammertime = new Hammer(element);
+          var pinch = new Hammer.Pinch(); // Pinch is not by default in the recognisers
+          hammertime.add(pinch); // add it to the Manager instance
+
+          hammertime.on("pan", (ev) => {
+            let rotation = model.getAttribute("rotation");
+            switch (ev.direction) {
+              case 2:
+                rotation.y = rotation.y + 6;
+                break;
+              case 4:
+                rotation.y = rotation.y - 6;
+                break;
+              case 8:
+                rotation.x = rotation.x + 6;
+                break;
+              case 16:
+                rotation.x = rotation.x - 6;
+                break;
+              default:
+                break;
+            }
+            model.setAttribute("rotation", rotation);
+          });
+
+          hammertime.on("pinch", (ev) => {
+            let scale = {
+              x: ev.scale * 0.05,
+              y: ev.scale * 0.05,
+              z: ev.scale * 0.05,
+            };
+            // alert(scale);
+            model.setAttribute("scale", scale);
+          });
+        },
+      });
 		</script>
 		
 
@@ -120,7 +165,6 @@
 		arjs
 		renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
 		vr-mode-ui="enabled: false"
-		gesture-detector
 		id="scene"
 	  >
 	  <a-assets>
@@ -145,8 +189,9 @@
 		<video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
-	  
-	  <a-anchor 
+	  <a-camera camera wasd-controls="acceleration: 10"></a-camera>
+	  <a-marker
+	    registerevents 
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-qr1.patt"
@@ -154,39 +199,19 @@
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 		smooth="true" 
-		smoothCount="10" 
-		smoothTolerance="0.01" 
-		smoothThreshold="5"
 	  >
 	    <a-text value="Tap on 3D model to play video" rotation="268 0 0" position="0 0 1"></a-text>
 	    <a-video id="videoPlayer" src="#promotional" width="6" height="4" rotation="268 0 0" position="0 0 4"></a-video>
-        <!--<a-entity
-		  clickhandler
-		  id="helmet-model"
-		  gltf-model="#box"
-          position="2 0 4"
-          scale="0.9 0.9 0.9"
-		  gesture-handler
-        ></a-entity>-->
-		<!--<a-entity
-		  id="helmet-model2"
-		  clickhandler
-		  gltf-model="#box2"
-          position="3 -3 -3"
-          scale="3 3 3"
-		  gesture-handler
-        ></a-entity>-->
 		<a-entity
 		  clickhandler
 		  id="helmet-model3"
-		  gesture-handler="minScale: 0.8; maxScale: 1.5"
 		  gltf-model="#scene1"
 		  position="0 0 0"
-		  scale="0.05 0.05 0.05"
+		  scale="0.08 0.08 0.08"
         >
 		</a-entity>
-      </a-anchor>
-      <a-entity camera></a-entity>
+      </a-marker>
+	</a-camera>
     </a-scene>
 	
 	<script>
