@@ -109,7 +109,11 @@
 	  <a-assets>
 	    <a-asset-item
 		  id="scene1"
-		  src="models/shiba/scene.gltf"
+		  src="scene.gltf"
+		>
+		<a-asset-item
+		  id="scene2"
+		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"
 		>
 		<a-asset-item id="obj-mtl" src="2.mtl"></a-asset-item>
 		<video crossorigin="anonymous" id="promotional" loop="false" src="video2.mp4" type="video/mp4" preload="auto"  playsinline>
@@ -134,7 +138,7 @@
 		  id="helmet-model3"
 		  gltf-model="#scene1"
 		  position="0 0 0"
-		  scale="1 1 1"
+		  scale="0.5 0.5 0.5"
 		  gesture-handler
         >
 		</a-entity>
