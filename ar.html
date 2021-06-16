@@ -27,7 +27,7 @@
 	 
 	  
       <a-scene 
-        arjs
+        arjs = "sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; trackingMethod: best; debugUIEnabled: false;"
 	    embedded 
 		renderer="logarithmicDepthBuffer: true; antialias: true; colorManagement: true;"
 		vr-mode-ui="enabled: false"
@@ -51,7 +51,7 @@
 	    type="pattern" 
 		preset="custom" 
 		url="pattern-marker.patt"
-		raycaster="objects: #helmet-model3"
+		raycaster="objects: #helmet-model3; near: 0; far:50000;"
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 		smooth="true" 
