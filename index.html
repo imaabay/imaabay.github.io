@@ -60,7 +60,7 @@
 		smoothThreshold="10"
 	  >
 	    <a-text value="Tap on 3D model to play video" rotation="268 0 0" position="0 0 1"></a-text>
-		  <a-plane id="videoPlayer" material="src:#promotional" height="8.5" width="10" rotation="268 0 0" position="0 0 4"></a-plane>
+		  <a-plane id="videoPlayer" material="src:#promotional" height="5" width="10" rotation="-90 0 0" position="0 0 4"></a-plane>
 	    <!-- <a-video id="videoPlayer" src="#promotional" width="6" height="4" rotation="268 0 0" position="0 0 4"></a-video> -->
 		<a-entity
 		  clickhandler
@@ -78,7 +78,7 @@
 	<script>
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
-				const btn = document.querySelector("#videoPlayer");
+				const btn = document.querySelector("#helmet-model3");
 				var v = document.querySelector("#promotional")
 				btn.addEventListener('click', () => {
 					v.play();
