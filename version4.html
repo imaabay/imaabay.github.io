@@ -1,82 +1,15 @@
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.4.2/dist/mindar.prod.js"></script> -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.4.2/dist/mindar.prod.js"></script>
-	<script
-      type="application/javascript"
-      src="https://hammerjs.github.io/dist/hammer.min.js"
-    ></script>
-	<script>
-		AFRAME.registerComponent("registerevents", {
-        init: function () {
-          var element = document.querySelector("body");
-          var model = document.getElementById("bottle");
-
-
-          var hammertime = new Hammer(element);
-          var pinch = new Hammer.Pinch(); // Pinch is not by default in the recognisers
-          hammertime.add(pinch); // add it to the Manager instance
-
-          hammertime.on("pan", (ev) => {
-            let rotation = model.getAttribute("rotation");
-            switch (ev.direction) {
-              case 2:
-                rotation.y = rotation.y + 6;
-                break;
-              case 4:
-                rotation.y = rotation.y - 6;
-                break;
-              case 8:
-                rotation.x = rotation.x + 6;
-                break;
-              case 16:
-                rotation.x = rotation.x - 6;
-                break;
-              default:
-                break;
-            }
-            model.setAttribute("rotation", rotation);
-          });
-
-          hammertime.on("pinch", (ev) => {
-            let scale = {
-              x: ev.scale * 0.05,
-              y: ev.scale * 0.05,
-              z: ev.scale * 0.05,
-            };
-            // alert(scale);
-            model.setAttribute("scale", scale);
-          });
-        },
-      });
-	</script>
   </head>
   <body>
-    <a-scene 
-    registerevents
-	  mindar="imageTargetSrc: ./targets.mind; showStats: true;" 
-	  color-space="sRGB" 
-	  renderer="colorManagement: true, physicallyCorrectLights" 
-	  vr-mode-ui="enabled: false" 
-	  device-orientation-permission-ui="enabled: false"
-	>
-      <a-assets>
-		<video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
-    	<a-asset-item
-		  id="scene1"
-		  src="scene.gltf"
-		>
-      </a-assets>
-	  <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      
-      <a-entity mindar-image-target="targetIndex: 0" id="bottle" >
-		<a-plane id="btn"  position='0 1 0' scale="1 0.5 0.5" rotation="0 0 0" material='transparent:true;alphaTest:0;src:#promotional'></a-plane>
-		<a-gltf-model  rotation="0 0 0 " position="0 0 0.1" scale="0.007 0.005 0.005" src="#scene1" registerevents>
-      </a-entity>
+    <a-scene>
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
     </a-scene>
-	
   </body>
 </html>
 
