@@ -97,7 +97,7 @@
 		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3.3</a>
 	  </p>
 	 
-	 
+	  
       <a-scene 
 	    embedded 
 		arjs = "sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
@@ -109,7 +109,7 @@
 	  <a-assets>
 	    <a-asset-item
 		  id="scene1"
-		  src="2.obj"
+		  src="scene.gltf"
 		>
 		<a-asset-item id="obj-mtl" src="2.mtl"></a-asset-item>
 		<video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
@@ -132,7 +132,7 @@
 		<a-entity
 		  clickhandler
 		  id="helmet-model3"
-		  obj-model="obj: #scene1; mtl: #obj-mtl"
+		  gltf-model="#scene1"
 		  position="0 0 0"
 		  scale="0.05 0.05 0.05"
 		  gesture-handler
