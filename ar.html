@@ -15,8 +15,6 @@
       		type="application/javascript"
       		src="https://hammerjs.github.io/dist/hammer.min.js"
     	></script>
-		
-		
     </header>
 	
 
@@ -24,6 +22,23 @@
 	  <!-- <p class="text-center mt-0" >
 		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3.3</a>
 	  </p> -->
+	  <script>
+		var image;
+		var model;
+		var video;
+		$(document).ready(function(){
+		  $.ajax({
+			type: "Get",
+			url: "database.json",
+			dataType: "json",
+			success: function(response){
+			   image = response.imageUrl
+			   model = response.modelUrl
+			   video = response.video
+			}
+		  })
+		})
+	  </script>
 	 
 	  
       <a-scene 
@@ -44,7 +59,7 @@
 		  id="scene2"
 		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"
 		>
-		<video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
+		<video crossorigin="anonymous" id="promotional" loop="false" src=video type="video/mp4" preload="auto"  playsinline>
 		<img id="btn_start" src="button_start.png">
 	  </a-assets>
 	  <a-marker
