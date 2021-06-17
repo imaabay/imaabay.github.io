@@ -28,6 +28,17 @@
 				   image = response.imageUrl
 				   model = response.modelUrl
 				   video = response.video
+
+				   const assets = document.getElementById("assets")
+				   const videoTag = document.createElement("video")
+				   videoTag.src = video
+				   videoTag.id = "promotional"
+				   videoTag.crossOrigin="anonymous"
+				   videoTag.loop="false"
+				   videoTag.type="video/mp4"
+				   videoTag.preload="auto"
+				   videoTag.playsInline="true"
+				   assets.appendChild(videoTag)
 				}
 			  })
 			})
@@ -36,7 +47,7 @@
     </header>
 	
 
-    <body style="margin : 0px; overflow: hidden;" id="body">	 
+    <body style="margin : 0px; overflow: hidden;">	 
 	  <!-- <p class="text-center mt-0" >
 		<a href="version2.html" id="headerVideoLink" target="_blank" class="btn btn-outline-success">Version 3.3</a>
 	  </p> -->
@@ -49,7 +60,7 @@
 		gesture-detector
 		loading-screen="dotsColor: #515F8F; backgroundColor: #C1C9E1"
 	  >
-	  <a-assets>
+	  <a-assets id="assets">
 	    <a-asset-item
 		  id="scene1"
 		  src="scene.gltf"
@@ -58,7 +69,7 @@
 		  id="scene2"
 		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"
 		>
-		<video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
+		<!-- <video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline> -->
 	  </a-assets>
 	  <a-marker
 	    type="pattern" 
