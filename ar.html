@@ -26,28 +26,17 @@
 						const model = response.modelurl;
 						const video = response.videourl;
 
-						if(video){
-						  $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
-						}
-                    },
-                    error: function(){
-                        alert("json not found");
-                    }
-                });
-            });
-			$(document).ready(function() {
-                $.ajax({
-                    type: "Get",
-                    url: "database.json",
-                    dataType: "json",
-                    success: function(response) {
-						const marker = response.markerurl;
-						const model = response.modelurl;
-						const video = response.videourl;
-						
-						if(model){
-						  $("#assets").html('<a-asset-item id="scene1" src="'+ model +'">');
-						}
+						// if(video){
+						//   $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
+						// }
+						// if(model){
+						  
+						// }
+
+						$("#assets").html('<a-asset-item id="scene1" src="'+ model +'">' +
+							'<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline' +
+							'src="'+ video +'" type="video/mp4">');
+
                     },
                     error: function(){
                         alert("json not found");
@@ -74,7 +63,7 @@
 		  id="scene1"
 		  src="scene.gltf"
 		> -->
-		<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline>
+		<!-- <video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline> -->
 	  </a-assets>
 	  <a-marker
 	    type="pattern" 
