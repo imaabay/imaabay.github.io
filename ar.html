@@ -29,13 +29,20 @@
 						if(video){
 						  $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
 						}
-						if(model){
-							$("#assets").html('<a-asset-item id="scene1" src="'+ model +'">');
-						}
+						// if(model){
+						// 	$("#assets").html('<a-asset-item id="scene1" src="'+ model +'">');
+						// }
 
 						// $("#assets").html('<a-asset-item id="scene1" src="'+ model +'">' +
 						// 	'<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline' +
 						// 	'src="'+ video +'" type="video/mp4">');
+						var m1 = document.createElement("a-asset-item");
+						$(m1).attr({
+							id:"scene1",
+							src: model
+						});
+
+						$("a-assets").append(m1);
 
                     },
                     error: function(){
@@ -63,7 +70,7 @@
 		  id="scene1"
 		  src="scene.gltf"
 		> -->
-		<!-- <video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline> -->
+		<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline>
 	  </a-assets>
 	  <a-marker
 	    type="pattern" 
