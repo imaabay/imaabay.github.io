@@ -26,8 +26,9 @@
 						const model = response.modelurl;
 						const video = response.videourl;
 
-						$('#assets video source').attr('src', video);
-						$('#assets video')[0].load();
+						// $('#assets video source').attr('src', video);
+						// $('#assets video')[0].load();
+						$("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
 
                       
                     },
@@ -60,7 +61,7 @@
 		  id="scene2"
 		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"
 		>
-		<video crossorigin="anonymous" id="promotional" loop="false" type="video/mp4" preload="auto"  playsinline>
+		<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline>
 	  </a-assets>
 	  <a-marker
 	    type="pattern" 
