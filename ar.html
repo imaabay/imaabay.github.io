@@ -14,6 +14,7 @@
 		<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="scripts/clickhandler.js" type="text/javascript"></script>
 
 		<script>
 		  	$(document).ready(function() {
@@ -75,7 +76,7 @@
 
 						var modelElement = document.createElement("a-entity");
 						$(modelElement).attr({
-							id:"helmet-model3",
+							id:"bottle-model",
 							//gltf-model:"#scene1",
 							position:"0 -2 0",
 							scale:"0.07 0.07 0.07",
@@ -83,17 +84,7 @@
 						});
 						modelElement.setAttribute('gltf-model', model);
 						modelElement.setAttribute('gesture-handler', "minScale: 1; maxScale: 1.5");
-						
-						// AFRAME.registerComponent('clickhandler', {
-						// 	init: function() {
-						// 		const btn = document.querySelector("#helmet-model3");
-						// 		var v = document.querySelector("#videoPlayer")
-						// 		btn.addEventListener('click', () => {
-						// 			v.play();
-						// 		});		
-						// }});
-
-						// modelElement.setAttribute(clickhandler);
+						modelElement.setAttribute('clickhandler', "modelId: #bottle-model; videoId: #videoPlayer");
 
 						$(markerElement).append(modelElement);
                     },
