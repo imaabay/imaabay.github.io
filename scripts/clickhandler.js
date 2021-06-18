@@ -6,9 +6,10 @@ AFRAME.registerComponent('clickhandler', {
 
     init: function() {
         console.log('In');
+
         //console.log(this.targetElement)
         this.targetElement = document.querySelector(this.data.modelId);
-        //console.log(btn);
+        console.log(this.targetElement);
         var v = document.querySelector(this.data.videoId);
         console.log(v);
         this.targetElement.addEventListener('click', () => {
