@@ -26,9 +26,9 @@
 						const model = response.modelurl;
 						const video = response.videourl;
 
-						if(video){
-						  $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
-						}
+						// if(video){
+						//   $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
+						// }
 			
 						var modelElement = document.createElement("a-asset-item");
 						$(modelElement).attr({
@@ -50,8 +50,28 @@
 							smoothCount:"20" ,
 							smoothTolerance:"1.8",
 							smoothThreshold:"9"
-						})
+						});
 						$("a-scene").append(markerElement);
+
+						var textElement = document.createElement("a-text");
+						$(textElement).attr({
+							value:"Tap on 3D model to play video", 
+		  					rotation:"268 0 0" ,
+		  					position:"0.5 0 -5"
+						});
+						$(markerElement).append(textElement);
+
+						var videoElement = document.createElement("a-video");
+						$(videoElement).attr({
+							id:"videoPlayer",
+							src: video,
+							type:"video/mp4", 
+							width:"5.2", 
+							height:"3", 
+							rotation:"268 0 0", 
+							position:"0 0 2.5"
+						});
+						$(markerElement).append(videoElement);
 
                     },
                     error: function(){
@@ -74,33 +94,31 @@
 		gesture-detector
 		loading-screen="dotsColor: #515F8F; backgroundColor: #C1C9E1"
 	  >
-	  <a-assets id="assets">
+	  <!-- <a-assets id="assets"> -->
 	    <!-- <a-asset-item
 		  id="scene1"
 		  src="scene.gltf"
 		> -->
-		<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline>
-	  </a-assets>
-	  <a-marker
-	    
-	  >
-	    <a-text 
+		<!-- <video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline> -->
+	  <!-- </a-assets> -->
+	  <!-- <a-marker> -->
+	    <!-- <a-text 
 		  value="Tap on 3D model to play video" 
 		  rotation="268 0 0" 
 		  position="0.5 0 -5" 
-		></a-text>
+		></a-text> -->
 		  <!-- <a-plane id="videoPlayer" material="src:#promotional" height="5" width="10" rotation="-90 0 0" position="0 0 4"></a-plane> -->
-	    <a-video id="videoPlayer" src="#promotional" width="5.2" height="3" rotation="268 0 0" position="0 0 2.5"></a-video>
-		<a-entity
+	    <!-- <a-video id="videoPlayer" src="#promotional" width="5.2" height="3" rotation="268 0 0" position="0 0 2.5"></a-video> -->
+		<!-- <a-entity
 		  clickhandler
 		  id="helmet-model3"
 		  gltf-model="#scene1"
 		  position="0 -2 0"
 		  scale="0.07 0.07 0.07"
 		  gesture-handler="minScale: 1; maxScale: 1.5"
-        >
-		</a-entity>
-      </a-marker>
+        > -->
+		<!-- </a-entity> -->
+      <!-- </a-marker> -->
 	  <a-entity camera></a-entity>
     </a-scene>
 	
