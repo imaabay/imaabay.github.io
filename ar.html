@@ -27,9 +27,9 @@
 						const model = response.modelurl;
 						const video = response.videourl;
 
-						// if(video){
-						//   $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
-						// }
+						if(video){
+						  $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
+						}
 			
 						// var modelElement = document.createElement("a-asset-item");
 						// $(modelElement).attr({
@@ -65,7 +65,7 @@
 						var videoElement = document.createElement("a-video");
 						$(videoElement).attr({
 							id:"videoPlayer",
-							src: video,
+							src: "#promotional",
 							type:"video/mp4", 
 							width:"5.2", 
 							height:"3", 
@@ -84,7 +84,7 @@
 						});
 						modelElement.setAttribute('gltf-model', model);
 						modelElement.setAttribute('gesture-handler', "minScale: 1; maxScale: 1.5");
-						modelElement.setAttribute('clickhandler', "modelId: #bottle-model; videoId: #videoPlayer");
+						modelElement.setAttribute('clickhandler', "modelId: '#bottle-model'; videoId: '#promotional'");
 
 						$(markerElement).append(modelElement);
                     },
@@ -108,13 +108,13 @@
 		gesture-detector
 		loading-screen="dotsColor: #515F8F; backgroundColor: #C1C9E1"
 	  >
-	  <!-- <a-assets id="assets"> -->
+	  <a-assets id="assets">
 	    <!-- <a-asset-item
 		  id="scene1"
 		  src="scene.gltf"
 		> -->
-		<!-- <video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline> -->
-	  <!-- </a-assets> -->
+		<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline>
+	  </a-assets>
 	  <!-- <a-marker> -->
 	    <!-- <a-text 
 		  value="Tap on 3D model to play video" 

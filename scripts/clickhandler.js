@@ -1,7 +1,7 @@
 AFRAME.registerComponent('clickhandler', {
     schema:{
-      modelId: {default: '#bottle-model'},
-      videoId: {default: '#videoPlayer'}
+      modelId: {default: "#bottle-model"},
+      videoId: {default: "#promotional"}
     },
 
     init: function() {
