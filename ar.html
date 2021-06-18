@@ -30,11 +30,11 @@
 						//   $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
 						// }
 			
-						var modelElement = document.createElement("a-asset-item");
-						$(modelElement).attr({
-							id:"scene1",
-							src: model
-						});
+						// var modelElement = document.createElement("a-asset-item");
+						// $(modelElement).attr({
+						// 	id:"scene1",
+						// 	src: model
+						// });
 
 						$("a-assets").append(modelElement);
 
@@ -72,6 +72,19 @@
 							position:"0 0 2.5"
 						});
 						$(markerElement).append(videoElement);
+
+						var modelElement = document.createElement("a-entity");
+						$(modelElement).attr({
+							clickhandler,
+							id:"helmet-model3",
+							//gltf-model:"#scene1",
+							position:"0 -2 0",
+							scale:"0.07 0.07 0.07",
+							//gesture-handler:"minScale: 1; maxScale: 1.5"
+						});
+						modelElement.setAttribute('gltf-model', model);
+						modelElement.setAttribute('gesture-handler', "minScale: 1; maxScale: 1.5");
+						$(markerElement).append(modelElement);
 
                     },
                     error: function(){
