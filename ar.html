@@ -75,7 +75,6 @@
 
 						var modelElement = document.createElement("a-entity");
 						$(modelElement).attr({
-							clickhandler,
 							id:"helmet-model3",
 							//gltf-model:"#scene1",
 							position:"0 -2 0",
@@ -84,8 +83,19 @@
 						});
 						modelElement.setAttribute('gltf-model', model);
 						modelElement.setAttribute('gesture-handler', "minScale: 1; maxScale: 1.5");
-						$(markerElement).append(modelElement);
+						
+						// AFRAME.registerComponent('clickhandler', {
+						// 	init: function() {
+						// 		const btn = document.querySelector("#helmet-model3");
+						// 		var v = document.querySelector("#videoPlayer")
+						// 		btn.addEventListener('click', () => {
+						// 			v.play();
+						// 		});		
+						// }});
 
+						// modelElement.setAttribute(clickhandler);
+
+						$(markerElement).append(modelElement);
                     },
                     error: function(){
                         alert("json not found");
@@ -135,7 +145,7 @@
 	  <a-entity camera></a-entity>
     </a-scene>
 	
-	<script>
+	<!-- <script>
 		AFRAME.registerComponent('clickhandler', {
 			init: function() {
 				const btn = document.querySelector("#helmet-model3");
@@ -144,7 +154,7 @@
 					v.play();
 				});		
 		}});
-	</script>
+	</script> -->
 	
     </body>
 </html>
