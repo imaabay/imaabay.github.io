@@ -29,20 +29,29 @@
 						if(video){
 						  $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
 						}
-						// if(model){
-						// 	$("#assets").html('<a-asset-item id="scene1" src="'+ model +'">');
-						// }
-
-						// $("#assets").html('<a-asset-item id="scene1" src="'+ model +'">' +
-						// 	'<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline' +
-						// 	'src="'+ video +'" type="video/mp4">');
-						var m1 = document.createElement("a-asset-item");
-						$(m1).attr({
+			
+						var modelElement = document.createElement("a-asset-item");
+						$(modelElement).attr({
 							id:"scene1",
 							src: model
 						});
 
-						$("a-assets").append(m1);
+						$("a-assets").append(modelElement);
+
+						var markerElement = document.createElement("a-marker");
+						$(markerElement).attr({
+							type:"pattern", 
+							preset:"custom", 
+							url:marker,
+							raycaster:"objects: #helmet-model3; near: 0; far:50000;",
+							emitevents:"true",
+							cursor:"fuse: false; rayOrigin: mouse;",
+							smooth:"true", 
+							smoothCount:"20" ,
+							smoothTolerance:"1.8",
+							smoothThreshold:"9"
+						})
+						$("a-scene").append(markerElement);
 
                     },
                     error: function(){
@@ -73,16 +82,7 @@
 		<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline>
 	  </a-assets>
 	  <a-marker
-	    type="pattern" 
-		preset="custom" 
-		url="pattern-marker.patt"
-		raycaster="objects: #helmet-model3; near: 0; far:50000;"
-		emitevents="true"
-		cursor="fuse: false; rayOrigin: mouse;"
-		smooth="true" 
-		smoothCount="20" 
-		smoothTolerance="1.8" 
-		smoothThreshold="9"
+	    
 	  >
 	    <a-text 
 		  value="Tap on 3D model to play video" 
