@@ -5,9 +5,15 @@ AFRAME.registerComponent('clickhandler', {
     },
 
     init: function() {
-        const btn = document.querySelector(this.data.modelId);
-        var v = document.querySelector(this.data.videoId)
-        btn.addEventListener('click', () => {
+        console.log('In');
+        //console.log(this.targetElement)
+        this.targetElement = document.querySelector(this.data.modelId);
+        //console.log(btn);
+        var v = document.querySelector(this.data.videoId);
+        console.log(v);
+        this.targetElement.addEventListener('click', () => {
+            //console.log('In Listener')
+            alert('Clicked');
             v.play();
         });		
 }});
