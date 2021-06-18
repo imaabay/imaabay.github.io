@@ -14,6 +14,22 @@
 		<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+
+		<script>
+		  	$(document).ready(function() {
+                $.ajax({
+                    type: "Get",
+                    url: "database.json",
+                    dataType: "json",
+                    success: function(response) {
+                          
+                    },
+                    error: function(){
+                        alert("json not found");
+                    }
+                });
+            });
+		</script>
 		
     </header>
 	
@@ -42,13 +58,13 @@
 	  <a-marker
 	    type="pattern" 
 		preset="custom" 
-		url="pattern-qr1.patt"
+		url="pattern-marker.patt"
 		raycaster="objects: #helmet-model3; near: 0; far:50000;"
 		emitevents="true"
 		cursor="fuse: false; rayOrigin: mouse;"
 		smooth="true" 
 		smoothCount="20" 
-		smoothTolerance="1.8" 
+		smoothTolerance="2" 
 		smoothThreshold="10"
 	  >
 	    <a-text 
