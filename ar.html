@@ -26,16 +26,16 @@
 						const model = response.modelurl;
 						const video = response.videourl;
 
-						// if(video){
-						//   $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
-						// }
-						// if(model){
-						  
-						// }
+						if(video){
+						  $("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
+						}
+						if(model){
+							$("#assets").html('<a-asset-item id="scene1" src="'+ model +'">');
+						}
 
-						$("#assets").html('<a-asset-item id="scene1" src="'+ model +'">' +
-							'<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline' +
-							'src="'+ video +'" type="video/mp4">');
+						// $("#assets").html('<a-asset-item id="scene1" src="'+ model +'">' +
+						// 	'<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline' +
+						// 	'src="'+ video +'" type="video/mp4">');
 
                     },
                     error: function(){
