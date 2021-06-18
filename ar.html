@@ -22,7 +22,15 @@
                     url: "database.json",
                     dataType: "json",
                     success: function(response) {
-                          
+						const marker = response.markerurl;
+						const model = response.modelurl;
+						const video = response.videourl;
+
+						var setVideo = '<video crossorigin="anonymous" id="promotional" loop="false" ' +
+							'src="' + video + '" type="video/mp4" preload="auto"  playsinline>'
+
+						$('#assets').append(setVideo)
+                      
                     },
                     error: function(){
                         alert("json not found");
@@ -53,7 +61,7 @@
 		  id="scene2"
 		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"
 		>
-		<video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline>
+		<!-- <video crossorigin="anonymous" id="promotional" loop="false" src="video.mp4" type="video/mp4" preload="auto"  playsinline> -->
 	  </a-assets>
 	  <a-marker
 	    type="pattern" 
