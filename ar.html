@@ -26,9 +26,8 @@
 						const model = response.modelurl;
 						const video = response.videourl;
 
-						// $('#assets video source').attr('src', video);
-						// $('#assets video')[0].load();
 						$("#promotional").html('<source src="'+ video +'" type="video/mp4"></source>' );
+						$("#assets").html('<a-asset-item id="scene1" src="'+ model +'">')
 
                       
                     },
@@ -53,14 +52,10 @@
 		loading-screen="dotsColor: #515F8F; backgroundColor: #C1C9E1"
 	  >
 	  <a-assets id="assets">
-	    <a-asset-item
+	    <!-- <a-asset-item
 		  id="scene1"
 		  src="scene.gltf"
-		>
-		<a-asset-item
-		  id="scene2"
-		  src="https://github.khronos.org/glTF-Sample-Viewer-Release/assets/models/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"
-		>
+		> -->
 		<video crossorigin="anonymous" id="promotional" loop="false" preload="auto"  playsinline>
 	  </a-assets>
 	  <a-marker
