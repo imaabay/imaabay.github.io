@@ -1,5 +1,7 @@
 {
     "markerurl": "pattern-marker.patt",
     "modelurl": "scene.gltf",
-    "videourl": "video.mp4"
+    "videourl": "video.mp4",
+    "model-obj": "Bottle.obj",
+    "model-mtl": "Bottle.mtl"
 }
