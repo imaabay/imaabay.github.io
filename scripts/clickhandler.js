@@ -6,12 +6,12 @@ AFRAME.registerComponent('clickhandler', {
 
     init: function() {
         console.log('In');
-        console.log(this.el.sceneEl);
         this.targetElement = document.querySelector(this.data.modelId);
         console.log(this.targetElement);
         var v = document.querySelector(this.data.videoId);
         console.log(v);
-        this.el.sceneEl.addEventListener("click", (e) => {
+        this.targetElement.addEventListener("touchstart", (e) => {
+            e.preventDefault();
             console.log('In Listener');
             alert('Clicked');
             v.play();
