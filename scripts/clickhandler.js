@@ -12,8 +12,8 @@ AFRAME.registerComponent('clickhandler', {
         console.log(v);
         this.el.addEventListener("click", (e) => {
             //e.preventDefault();
-            //console.log('In Listener');
-            //alert('Clicked');
+           // console.log('In Listener');
+            alert('Clicked');
             v.play();
         });		
 }});
