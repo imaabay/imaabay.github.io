@@ -11,9 +11,6 @@ AFRAME.registerComponent('clickhandler', {
         var v = document.querySelector(this.data.videoId);
         console.log(v);
         btn.addEventListener("click", (e) => {
-            //e.preventDefault();
-           // console.log('In Listener');
-            alert('Clicked');
             v.play();
         });		
 }});
