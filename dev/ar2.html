@@ -30,6 +30,18 @@
 		loading-screen="dotsColor: #515F8F; backgroundColor: #C1C9E1"
 	  >
 	  <a-assets id="assets">
+        <a-asset-item
+        id="scene1"
+        src="../scene.gltf"
+        >
+        <a-asset-item
+		  id="fish-obj"
+		  src="fish-2.obj"
+		>
+        <a-asset-item
+		  id="fish-mtl"
+		  src="fish-2.mtl"
+		>
 	    <a-asset-item
 		  id="bottle-obj"
 		  src="Bottel.obj"
@@ -61,10 +73,18 @@
 	    <!-- <a-video id="videoPlayer" src="#promotional" width="5.2" height="3" rotation="268 0 0" position="0 0 2.5"></a-video> -->
 		<a-entity
 		  id="helmet-model3"
-		  obj-model="obj: #bottle-obj; mtl: #bottle-mtl;"
-          scale="0.03 0.03 0.03"
+		  obj-model="obj: #fish-obj; mtl: #fish-mtl"
+          scale="0.1 0.1 0.1"
           gesture-handler
         >
+        <!-- <a-entity
+		  clickhandler
+		  id="helmet-model3"
+		  gltf-model="#scene1"
+		  position="0 -2 0"
+		  scale="0.07 0.07 0.07"
+		  gesture-handler="minScale: 1; maxScale: 1.5"
+        > -->
 		</a-entity>
       </a-marker>
 	  <a-entity camera></a-entity>
