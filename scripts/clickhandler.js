@@ -13,7 +13,7 @@ AFRAME.registerComponent('clickhandler', {
         this.el.addEventListener("click", (e) => {
             //e.preventDefault();
             //console.log('In Listener');
-            alert('Clicked');
+            //alert('Clicked');
             v.play();
         });		
 }});
