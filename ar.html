@@ -111,6 +111,14 @@
 		  id="scene1"
 		  src="scene.gltf"
 		>
+		<a-asset-item
+		  id="bottle-obj"
+		  src="https://auth-service-dev-serverlessdeploymentbucket-6mwsvzoosc9r.s3.amazonaws.com/bottle/Final+bot.obj"
+		>
+        <a-asset-item
+		  id="bottle-mtl"
+		  src="https://auth-service-dev-serverlessdeploymentbucket-6mwsvzoosc9r.s3.amazonaws.com/bottle/Final+bot.mtl"
+		>
 		<video crossorigin="anonymous" id="promotional" src=video.mp4 type="video/mp4" loop="false" preload="auto"  playsinline>
 	  </a-assets>
 	  <a-marker
@@ -132,13 +140,20 @@
 		></a-text>
 		  <!-- <a-plane id="videoPlayer" material="src:#promotional" height="5" width="10" rotation="-90 0 0" position="0 0 4"></a-plane> -->
 	    <!-- <a-video id="videoPlayer" src="#promotional" width="5.2" height="3" rotation="268 0 0" position="0 0 2.5"></a-video> -->
-		<a-entity
+		<!-- <a-entity
 		  clickhandler
 		  id="helmet-model3"
 		  gltf-model="#scene1"
 		  position="0 0 0"
 		  scale="0.09 0.09 0.09"
 		  gesture-handler="minScale: 1; maxScale: 1.5"
+        > -->
+		<a-entity
+		  id="helmet-model3"
+		  obj-model="obj: #bottle-obj; mtl: #bottle-mtl"
+          scale="0.01 0.01 0.01"
+		  rotation="268 0 0"
+          gesture-handler
         >
 		</a-entity>
       </a-marker>
