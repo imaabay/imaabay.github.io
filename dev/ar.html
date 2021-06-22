@@ -18,7 +18,7 @@
 
 		<script>
 		  	$(document).ready(function() {
-                $.ajax({
+                $.ajax({	
                     type: "Get",
                     url: "database.json",
                     dataType: "json",
@@ -26,6 +26,8 @@
 						const marker = response.markerurl;
 						const model = response.modelurl;
 						const video = response.videourl;
+						const bottleobj = response.obj;
+						const bottlemtl = response.mtl;
 
 						console.log(response);
 
@@ -33,13 +35,22 @@
 						  $("#promotional").html('<source id="promsource" src="'+ video +'" type="video/mp4"></source>' );
 						}
 			
-						// var modelElement = document.createElement("a-asset-item");
-						// $(modelElement).attr({
-						// 	id:"scene1",
-						// 	src: model
-						// });
+						var modelElement = document.createElement("a-asset-item");
+						$(modelElement).attr({
+							id:"bottle-obj",
+							src: bottleobj
+						});
 
 						$("a-assets").append(modelElement);
+
+						var modelElement2 = document.createElement("a-asset-item");
+						$(modelElement2).attr({
+							id:"bottle-mtl",
+							src: bottlemtl
+						});
+
+						$("a-assets").append(modelElement2);
+
 
 						var markerElement = document.createElement("a-marker");
 						$(markerElement).attr({
@@ -82,7 +93,7 @@
 							position:"0 -2 0",
 							scale:"0.07 0.07 0.07",
 						});
-						modelElement.setAttribute('gltf-model', model);
+						modelElement.setAttribute('obj-model', "obj: #bottle-obj; mtl: #bottle-mtl");
 						modelElement.setAttribute('gesture-handler', "minScale: 1; maxScale: 1.5");
 						modelElement.setAttribute('clickhandler', "modelId: #bottle-model; videoId: #promotional");
 

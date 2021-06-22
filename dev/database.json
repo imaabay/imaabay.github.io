@@ -1,5 +1,7 @@
 {
     "markerurl": "../pattern-marker.patt",
     "modelurl": "../scene.gltf",
-    "videourl": "../video.mp4"
+    "videourl": "../video.mp4",
+    "obj": "https://auth-service-dev-serverlessdeploymentbucket-6mwsvzoosc9r.s3.amazonaws.com/bottle/Final+bot.obj",
+    "mtl": "https://auth-service-dev-serverlessdeploymentbucket-6mwsvzoosc9r.s3.amazonaws.com/bottle/Final+bot.mtl"
 }
