@@ -80,11 +80,12 @@
 							id:"videoPlayer",
 							src: "#promotional",
 							type:"video/mp4", 
-							width:"5.2", 
-							height:"3", 
+							width:"4", 
+							height:"2", 
 							rotation:"268 0 0", 
-							position:"0 0 2.5"
+							position:"0 1 0"
 						});
+						videoElement.setAttribute('gesture-handler', "minScale: 1; maxScale: 1.5");
 						$(markerElement).append(videoElement);
 
 						var modelElement = document.createElement("a-entity");
