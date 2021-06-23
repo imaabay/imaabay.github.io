@@ -103,13 +103,11 @@
       <a-scene 
         arjs = "sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; trackingMethod: best; debugUIEnabled: false;"
 	    embedded 
-		renderer="logarithmicDepthBuffer: true;"
-		antialias="true"
+		renderer="logarithmicDepthBuffer: true; antialias: true;"
 		vr-mode-ui="enabled: false"
 		id="scene"
 		gesture-detector
 		loading-screen="dotsColor: #515F8F; backgroundColor: #C1C9E1"
-		fog
 	  >
 	  <a-assets id="assets">
 	    <a-asset-item
@@ -162,7 +160,7 @@
           gesture-handler
         > -->
 		<!-- </a-entity> -->
-		<!-- <a-entity light="type: hemisphere; color: #800000; groundColor: #8B0000; intensity: 2"></a-entity> -->
+		<a-entity light="type: hemisphere; color: #800000; groundColor: #8B0000; intensity: 2"></a-entity>
       </a-marker>
 	  <a-entity camera></a-entity>
     </a-scene>
