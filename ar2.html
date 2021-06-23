@@ -14,7 +14,7 @@
 
 <body style="margin : 0px; overflow: hidden;">
     <div style="position: fixed; width: 100%;margin: 0 auto; text-align: center; z-index: 99; top: 1%;">
-        <p>Version 41</p>
+        <p>Version 42</p>
     </div>
     <a-scene
       gesture-detector 
@@ -23,6 +23,7 @@
       embedded 
       arjs
       vr-mode-ui="enabled: false"
+      loading-screen="dotsColor: #515F8F; backgroundColor: #C1C9E1"
     >
         <a-assets>
             <a-asset-item id="helmet" src="https://auth-service-dev-serverlessdeploymentbucket-6mwsvzoosc9r.s3.amazonaws.com/winbot2/new_try1.gltf"></a-asset-item>
@@ -42,22 +43,23 @@
 	    >
         <a-text 
          value="Tap on 3D model to play video6" 
-         rotation="268 0 0" 
-         position="0.5 0 -5" 
+         rotation="270 0 0" 
+         position="0.5 0 -6" 
         ></a-text>
-
+        <a-box id="loadingEl" scale="0.3 0.3 0.3"></a-box>
         <a-entity 
           id="helmet-model3"
           position="0 0 0" 
-          rotation="268 0 0"
+          rotation="270 0 0"
           gltf-model="#helmet" 
           cube-env-map="path: assets/images/map/;extension: png;reflectivity: 0.6;"
           gesture-handler="minScale: 1; maxScale: 1.5"
           clickhandler
+          loader
         >
         </a-entity>
 
-        <a-video id="videoPlayer" src="#promotional" width="3.8" height="1.8" rotation="269 0 0" position="0 1 -2"></a-video>
+        <a-video id="videoPlayer" src="#promotional" width="3.8" height="1.8" rotation="270 0 0" position="0 1 1"></a-video>
 
 		
         <!-- <a-entity
@@ -82,6 +84,16 @@
 					v.play();
 				});		
 		}});
+
+        AFRAME.registerComponent('loader', {
+            init: function() {
+                  let loader = document.querySelector("#loadingEl")
+                  this.el.addEventListener('model-loaded', e => {
+                  console.log('loaded')
+                  loader.setAttribute("visible", "false")
+                })
+            }
+        })
 	</script>
 
 </body>
