@@ -104,10 +104,12 @@
         arjs = "sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; trackingMethod: best; debugUIEnabled: false;"
 	    embedded 
 		renderer="logarithmicDepthBuffer: true;"
+		antialias="true"
 		vr-mode-ui="enabled: false"
 		id="scene"
 		gesture-detector
 		loading-screen="dotsColor: #515F8F; backgroundColor: #C1C9E1"
+		fog
 	  >
 	  <a-assets id="assets">
 	    <a-asset-item
@@ -137,7 +139,7 @@
 		smoothThreshold="9" 
 	  >
 	    <a-text 
-		  value="Tap on 3D model to play video1" 
+		  value="Tap on 3D model to play video2" 
 		  rotation="268 0 0" 
 		  position="0.5 0 -5" 
 		></a-text>
@@ -160,7 +162,7 @@
           gesture-handler
         > -->
 		<!-- </a-entity> -->
-		<a-entity light="type: hemisphere; color: #800000; groundColor: #8B0000; intensity: 2"></a-entity>
+		<!-- <a-entity light="type: hemisphere; color: #800000; groundColor: #8B0000; intensity: 2"></a-entity> -->
       </a-marker>
 	  <a-entity camera></a-entity>
     </a-scene>
