@@ -97,9 +97,9 @@
 
     <body style="margin : 0px; overflow: hidden;">	 
       <a-scene 
-        arjs = "sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; trackingMethod: best; debugUIEnabled: false;"
+        arjs
 	    embedded 
-		renderer="logarithmicDepthBuffer: true; antialias: true;"
+		renderer="logarithmicDepthBuffer: true; antialias: true; alpha: true; colorManagement: true;"
 		vr-mode-ui="enabled: false"
 		id="scene"
 		gesture-detector
@@ -177,28 +177,6 @@
 					v.play();
 				});		
 		}});
-
-		// AFRAME.registerComponent('bottle', {
-        //     init: function(){
-        //         let el = this.el;
-        //         el.addEventListener("model-loaded", e =>{
-        //             let tree3D = el.getObject3D('mesh');
-        //             if (!tree3D){return;}                   
-        //             tree3D.traverse(function(node){
-        //                 if (node.isMesh){                           
-        //                    // if (node.name === 'myModelName'){
-        //                   // node.material do stuff to your material
-        //                    //}
-        //                   //  console.log(node.name,  node.material);
-        //                     node.material.color=new THREE.Color(0x66cc22);
-        //                     node.material.map =  new THREE.TextureLoader().load( "cap_Bump.jpg");
-        //                 }
-        //             });
-        //         });
-        //     }
-        // });  
-
-
 	</script>
 	
     </body>
