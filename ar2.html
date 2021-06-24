@@ -44,12 +44,13 @@
         <a-text 
          value="*Tap on 3D model to play video" 
          rotation="270 0 0" 
-         position="0 0 -6" 
+         position="0 -3 -7" 
         ></a-text>
-        <a-octahedron id="loadingEl" radius="1" position="0 0 0"  color="#515F8F" scale="0.8 0.8 0.8" animation="property: rotation; dur: 3000; to: 0 360 0; loop: true"></a-octahedron>
+        <a-octahedron id="loadingEl" radius="1" position="0 0 0"  color="#515F8F" scale="0.5 0.5 0.5" animation="property: rotation; dur: 3000; to: 0 360 0; loop: true"></a-octahedron>
         <a-entity 
           id="helmet-model3"
-          position="0 0 0" 
+          position="0 0 0"
+	  scale="0.3 0.3 0.3"		  	  
           rotation="270 0 0"
           gltf-model="#helmet" 
           cube-env-map="path: assets/images/map/;extension: png;reflectivity: 0.6;"
