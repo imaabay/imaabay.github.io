@@ -10,7 +10,7 @@
       window.onload = () => {                       
         navigator.geolocation.getCurrentPosition((position) => {
         console.log(position.coords.latitude)
-        document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+        document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
       });
      }
     </script>
@@ -22,11 +22,10 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <a-text
-        value="No markers around"
-        look-at="[gps-camera]"
-        scale="10 10 10"
-      ></a-text>
+    <a-entity 
+      gltf-model="new_try1.gltf" 
+      rotation="0 180 0" scale="0.15 0.15 0.15" 
+    />
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
