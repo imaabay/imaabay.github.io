@@ -254,8 +254,7 @@
         color-space="sRGB" 
         renderer="colorManagement: true, physicallyCorrectLights" 
         vr-mode-ui="enabled: false" 
-        device-orientation-permission-ui="enabled: false" 
-        gesture-detector
+        device-orientation-permission-ui="enabled: false"  
       >
         <a-assets>
           <img id="card" src="./assets/card-example/card.png" />
@@ -278,7 +277,7 @@
         <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
         </a-camera>
 
-        <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0" gesture-handler>
+        <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0"  gesture-detector>
           <!-- <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane> -->
 
           <a-entity visible=false id="portfolio-panel" position="0 0.4 0">
@@ -290,7 +289,7 @@
             </a-entity>
           </a-entity>
 
-          <a-gltf-model id="avatar"  rotation="0 0 0" position="0 0 -0.2" scale="0.3 0.3 0.3" src="#avatarModel"></a-gltf-model>
+          <a-gltf-model id="avatar"  rotation="0 0 0" position="0 0 -0.2" scale="0.3 0.3 0.3" src="#avatarModel" gesture-handler></a-gltf-model>
           <a-octahedron id="loadingEl" radius="1" position="0 0 0"  color="#515F8F" scale="0.09 0.09 0.09" animation="property: rotation; dur: 3000; to: 0 360 0; loop: true"></a-octahedron>
           <a-octahedron id="loadingEl1" radius="1" position="0.2 0 0"  color="#515F8F" scale="0.09 0.09 0.09" animation="property: rotation; dur: 3000; to: 0 360 0; loop: true"></a-octahedron>
           <a-octahedron id="loadingEl2" radius="1" position="-0.2 0 0"  color="#515F8F" scale="0.09 0.09 0.09" animation="property: rotation; dur: 3000; to: 0 360 0; loop: true"></a-octahedron>
