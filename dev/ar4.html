@@ -90,7 +90,11 @@
       </div>
     </div>
 
-    
+    const linkElement = document.getElementById("ar-link");
+    linkElement.addEventListener("message", function (event) {console.log('abc'); }, false);
+    <a id="arb-link" rel="ar" href="../models/3D_Wine_Bottle_Model.usdz#applePayButtonType=buy&checkoutTitle=BuyMyThingamabob&checkoutSubtitle=VeryCoolEnticingCallToAction&price=$300"></a>
+    const linkElementt = document.getElementById("arb-link");
+    linkElementt.addEventListener("message", function (event) {console.log('xyz');}, false);
 
     <model-viewer 
       id="reveal"
