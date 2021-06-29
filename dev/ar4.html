@@ -25,7 +25,9 @@
   </head>
 
   <body style="margin: 0; overflow: hidden;">
-    <video crossorigin="anonymous" id="promotional" src=../video.mp4 type="video/mp4" loop="false" preload="auto"  playsinline></video>
+    <video id='video'>
+      <source src="../video.mp4" type="video/mp4">
+    </video>
     <button id='playVid'>Play</button>
     <model-viewer 
       src="../models/wine/scene.gltf" 
