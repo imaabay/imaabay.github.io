@@ -94,12 +94,7 @@
     </iframe>
     <button id='playVid'>Play</button> -->
 
-    <div class="content">
-      <a href="#videoStory" class="button more" id="videoLink">Watch Video<i class="fa fa-play-circle" aria-hidden="true">&nbsp;</i></a>
-      <div id="videoStory" class="mfp-hide" style="max-width: 75%; margin: 0 auto;">
-       <iframe width="853" height="480" src="../video.mp4" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
+    
 
     <model-viewer 
       src="../models/wine/scene.gltf" 
@@ -110,8 +105,15 @@
       alt="A 3D model of an astronaut" 
       ios-src="../models/3D_Wine_Bottle_Model.usdz" 
     >
+
+    <div class="content">
+      <a href="#videoStory" class="button more" id="videoLink">Watch Video<i class="fa fa-play-circle" aria-hidden="true">&nbsp;</i></a>
+      <div id="videoStory" class="mfp-hide" style="max-width: 75%; margin: 0 auto;">
+       <iframe width="853" height="480" src="../video.mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
     
-  </model-viewer>  
+    </model-viewer>  
 
   <script>
     // document.getElementById('playVid').onclick = function () {
