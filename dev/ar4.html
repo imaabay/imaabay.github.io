@@ -34,6 +34,9 @@
         width:100%;
         margin:0 auto;
       }
+      model-viewer#reveal {
+        --poster-color: transparent;
+      }
     </style>
 
     <script>
@@ -80,14 +83,19 @@
     
 
     <model-viewer 
+      id="reveal"
+      loading="eager"
       src="../models/wine/scene.gltf" 
       ar 
       ar-scale="10%" 
-      ar-modes="scene-viewer webxr quick-look"
+      ar-modes="webxr quick-look"
       camera-controls 
       alt="A 3D model of an astronaut" 
       ios-src="../models/3D_Wine_Bottle_Model.usdz" 
     >
+      <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+        👋 Activate AR
+      </button>
     </model-viewer>  
 
   
