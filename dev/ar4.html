@@ -4,10 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
 
     <style>
       model-viewer{
@@ -35,6 +36,19 @@
         margin:0 auto;
       }
     </style>
+
+    <script>
+      // document.getElementById('playVid').onclick = function () {
+      //    document.getElementById('video').play();
+      // };
+
+      $(document).ready(function() {
+        $('#headerVideoLink').magnificPopup({
+          type:'inline',
+          midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        });         
+      });
+    </script>
   </head>
 
   <body style="margin: 0; overflow: hidden;">
@@ -55,10 +69,10 @@
       <div class="row">
         <div class="col-sm-12">
           <p class="text-center mt-5">
-            <a href="#headerPopup" id="headerVideoLink" target="_blank" class="btn btn-outline-danger popup-modal">PLAY VIDEO</a>
+            <a href="#headerPopup" id="headerVideoLink" target="_blank" class="btn btn-outline-success popup-modal">PLAY VIDEO</a>
           </p>
-         <div id="headerPopup" class="mfp-hide embed-responsive embed-responsive-21by9">
-          <iframe class="embed-responsive-item" width="854" height="480" src="../video.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <div id="headerPopup" class="mfp-hide embed-responsive embed-responsive-21by9">
+           <iframe class="embed-responsive-item" width="854" height="480" src="../video.mp4" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -77,18 +91,7 @@
     >
     </model-viewer>  
 
-  <script>
-    // document.getElementById('playVid').onclick = function () {
-    //    document.getElementById('video').play();
-    // };
-
-    $(document).ready(function() {
-      $('#headerVideoLink').magnificPopup({
-        type:'inline',
-        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-      });         
-    });
-  </script>
+  
     
   </body>
 </html>
