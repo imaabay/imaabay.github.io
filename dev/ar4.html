@@ -91,9 +91,11 @@
     </div>
 
     <!-- <a id="arb-link" rel="ar" href="../models/3D_Wine_Bottle_Model.usdz#applePayButtonType=buy&checkoutTitle=BuyMyThingamabob&checkoutSubtitle=VeryCoolEnticingCallToAction&price=$300"></a> -->
-
-    <a id="arb-link" rel="ar" href="../models/3D_Wine_Bottle_Model.usdz#custom=https://google.com"></a>
-
+    
+    <a id="arb-link" rel="ar" href="../models/3D_Wine_Bottle_Model.usdz#custom=https://google.com">
+      <img href="../assets/background.jpg" />
+    </a>
+    
 
     <!-- <model-viewer 
       id="reveal"
@@ -115,23 +117,23 @@
     </model-viewer>   -->
 
     <script>
-      modelViewer.addEventListener('load', () => {
-        const center = modelViewer.getCameraTarget();
-        const size = modelViewer.getDimensions();
-        const x2 = size.x / 2;
-        const y2 = size.y / 2;
-        const z2 = size.z / 2;
+    //   modelViewer.addEventListener('load', () => {
+    //     const center = modelViewer.getCameraTarget();
+    //     const size = modelViewer.getDimensions();
+    //     const x2 = size.x / 2;
+    //     const y2 = size.y / 2;
+    //     const z2 = size.z / 2;
 
-        modelViewer.updateHotspot({
-          name: 'hotspot-dot+X-Y+Z',
-          position: `${center.x + x2} ${center.y - y2} ${center.z + z2}`
-        });
-      });
+    //     modelViewer.updateHotspot({
+    //       name: 'hotspot-dot+X-Y+Z',
+    //       position: `${center.x + x2} ${center.y - y2} ${center.z + z2}`
+    //     });
+    //   });
   
-       const linkElement = document.getElementById("ar-link");
-    linkElement.addEventListener("message", function (event) {alert("abc"); }, false);
-    const linkElementt = document.getElementById("arb-link");
-    linkElementt.addEventListener("message", function (event) {alert("xyz");}, false);
+    //    const linkElement = document.getElementById("ar-link");
+    // linkElement.addEventListener("message", function (event) {alert("abc"); }, false);
+    // const linkElementt = document.getElementById("arb-link");
+    // linkElementt.addEventListener("message", function (event) {alert("xyz");}, false);
     </script>
     
   </body>
