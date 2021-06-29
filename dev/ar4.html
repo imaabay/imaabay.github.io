@@ -25,9 +25,17 @@
   </head>
 
   <body style="margin: 0; overflow: hidden;">
-    <video id='video'>
+    <!-- <video id='video'>
       <source src="../video.mp4" type="video/mp4">
-    </video>
+    </video> -->
+    <iframe 
+       id="video" 
+       class="embed-responsive-item" 
+       width="560" 
+       height="315" 
+       src="../video.mp4" 
+       allowfullscreen>
+    </iframe>
     <button id='playVid'>Play</button>
     <model-viewer 
       src="../models/wine/scene.gltf" 
