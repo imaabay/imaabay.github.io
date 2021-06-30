@@ -5,10 +5,18 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>AR</title>
 		<link rel="stylesheet" href="../style.css">
+		<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
 		<script type="text/javascript">
-		    var os = navigator.appVersion;
-			alert(os);
+			$(document).ready(function() {
+                var os = navigator.platform;
+				if(os == 'iPhone' || os == 'iPad'){
+					alert(os);
+				}
+            });
 		</script>
 		
     </header>
@@ -18,7 +26,7 @@
 			<div class="card">
 			  <p>Press start and direct camera to the qr code to view AR content.<br>Tap on 3D model to play video.<br>Rotate and scale model using hand gestures.<br></p>
 			</div>
-			<a href="ar2.html" id="headerVideoLink" target="_self" class="btn">START1</a>
+			<a href="ar2.html" id="headerVideoLink" target="_self" class="btn">START2</a>
 		  </div>
 	  </section>
 	  <!-- <footer>
