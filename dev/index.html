@@ -14,7 +14,16 @@
 			$(document).ready(function() {
                 var os = navigator.platform;
 				if(os == 'iPhone' || os == 'iPad'){
-					alert(os);
+					var aElement = document.createElement("a");
+					$(aElement).attr({
+					  id:"ios-alert",
+					  href:"ar_ios.html",
+					  target:"_self",
+					  class:"btn",
+					  value: "START3"
+					});
+
+					$(".container").append(aElement);
 				}
             });
 		</script>
