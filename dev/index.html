@@ -3,6 +3,7 @@
 	    <meta charset="UTF-8">
 		<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    
 		<title>AR</title>
 		<link rel="stylesheet" href="../style.css">
 		<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
@@ -21,6 +22,7 @@
 
 				if(os == 'iPhone' || os == 'iPad'){
 					var aElement = document.createElement("a");
+					window.location.href="ar_ios.html";
 					$(aElement).attr({
 					  id:"ios-alert",
 					  href:"ar_ios.html",
@@ -31,6 +33,7 @@
 					$(".container").append(aElement);
 				}else{
 					var aElement_android = document.createElement("a");
+					window.location.href="ar_android.html";
 					$(aElement_android).attr({
 					  id:"ios-alert",
 					  href:"ar_android.html",
