@@ -55,53 +55,13 @@
     </style>
 
     <script>
-      // document.getElementById('playVid').onclick = function () {
-      //    document.getElementById('video').play();
-      // };
-
-      $(document).ready(function() {
-        $('#headerPopup').magnificPopup({
-          type:'inline',
-          midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-        });         
+     $(document).ready(function() {
+        $('#btn-android').trigger('click');      
       });
     </script>
   </head>
 
   <body style="margin: 0; overflow: hidden;">
-    <!-- <video id='video'>
-      <source src="../video.mp4" type="video/mp4">
-    </video> -->
-    <!-- <iframe 
-       id="video" 
-       class="embed-responsive-item" 
-       width="560" 
-       height="315" 
-       src="../video.mp4" 
-       allowfullscreen>
-    </iframe>
-    <button id='playVid'>Play</button> -->
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <p class="text-center mt-5">
-            <a href="#headerPopup" id="headerVideoLink" target="_blank" class="btn btn-outline-success popup-modal">PLAY VIDEO</a>
-          </p>
-          <div id="headerPopup" class="mfp-hide embed-responsive embed-responsive-21by9">
-           <iframe class="embed-responsive-item" width="854" height="480" src="../video.mp4" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- <a id="arb-link" rel="ar" href="../models/3D_Wine_Bottle_Model.usdz#applePayButtonType=buy&checkoutTitle=BuyMyThingamabob&checkoutSubtitle=VeryCoolEnticingCallToAction&price=$300"></a> -->
-    
-    <!-- <a id="arb-link" rel="ar" href="../models/3D_Wine_Bottle_Model.usdz#custom=https://imaabay.github.io/dev/next.html&customHeight=medium">
-      <img src="../assets/background.jpg" />
-    </a> -->
-
-    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/7t5gm5uA-RE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
     
 
     <model-viewer 
@@ -114,30 +74,35 @@
       camera-controls 
       alt="A 3D model of an astronaut" 
     >
-      <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+      <button id="btn-android" slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
         Activate AR
       </button>
-      <button style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">Hello</button>
-      <button slot="hotspot-dot+X-Y+Z" class="dot" data-position="0 0 0" data-normal="0 0 0"></button>
+
+      <button id="play-btn" slot="hotspot-dim+X-Y+Z" class="dot" data-position="0 0 0" data-normal="0 0 0"></button>
       
     </model-viewer>  
 
     <script>
-    //   modelViewer.addEventListener('load', () => {
-    //     const center = modelViewer.getCameraTarget();
-    //     const size = modelViewer.getDimensions();
-    //     const x2 = size.x / 2;
-    //     const y2 = size.y / 2;
-    //     const z2 = size.z / 2;
+      modelViewer.addEventListener('load', () => {
+        const center = modelViewer.getCameraTarget();
+        const size = modelViewer.getDimensions();
+        const x2 = size.x / 2;
+        const y2 = size.y / 2;
+        const z2 = size.z / 2;
 
-    //     modelViewer.updateHotspot({
-    //       name: 'hotspot-dot+X-Y+Z',
-    //       position: `${center.x + x2} ${center.y - y2} ${center.z + z2}`
-    //     });
-    //   });
+        modelViewer.updateHotspot({
+          name: 'hotspot-dim+X-Y+Z',
+          position: `${center.x + x2} ${center.y - y2} ${center.z + z2}`
+        });
+        modelViewer.querySelector('button[slot="hotspot-dim+X-Y+Z"]').textContent =
+        `Play Video`;
+
+        modelViewer.querySelector('button[slot="hotspot-dim+X-Y+Z"]').addEventListener("click", function(){
+            window.open("https://imaabay.github.io/dev/video.html", "_self");
+        })
+      });
+
   
-    //    const linkElement = document.getElementById("ar-link");
-    // linkElement.addEventListener("message", function (event) {alert("abc"); }, false);
     </script>
     
   </body>
