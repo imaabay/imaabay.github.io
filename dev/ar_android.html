@@ -10,6 +10,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
 
     <style>
+      body{
+        background-image: url("../assets/background.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
       model-viewer{
         height : 400px;
         width : 600px;
@@ -55,9 +63,12 @@
     </style>
 
     <script>
-     $(document).ready(function() {
-        $('#btn-android').trigger('click');      
-      });
+    //  $(document).ready(function() {
+    //     $('#btn-android').trigger('click');      
+    //   });
+      window.onload(function(){
+          document.getElementById("btn-android").click();
+      })
     </script>
   </head>
 

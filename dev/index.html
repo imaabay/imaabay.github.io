@@ -12,7 +12,13 @@
 
 		<script type="text/javascript">
 			$(document).ready(function() {
+				
                 var os = navigator.platform;
+				console.log(navigator)
+				// var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+				// $.browser.chrome = /chrom(e|ium)/.test(navigator.userAgent.toLowerCase()); 
+				// console.log($.browser.chrome)
+
 				if(os == 'iPhone' || os == 'iPad'){
 					var aElement = document.createElement("a");
 					$(aElement).attr({
