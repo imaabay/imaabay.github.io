@@ -19,19 +19,19 @@
         background-attachment: fixed;
       }
       model-viewer{
-        height : 400px;
+        height : 500px;
         width : 600px;
-        margin: 0 auto;
+        padding-top: 20px;
       }
       #model-container{
         display: flex;
         justify-content: center;
         align-items: center;
         position: absolute;
-        width: 50%;
-        height: 30%;
+        width: 100%;
         z-index: 10;
-        background-color: #eee;
+        margin-top: 20vh;
+        padding: 5px;
       }
       #headerPopup{
         width:75%;
@@ -48,17 +48,38 @@
 
       .dot{
         display: block;
-        width: 12px;
+        /* width: 12px;
         height: 12px;
         border-radius: 50%;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-        background: #fff;
+        background: #fff; */
+        position: absolute;
+        /* bottom: 16px;
+        right: 16px; */
+        height: 70px;
+        background: rgba(101, 119, 179, 0.2);
+        box-shadow: 0 15px 35px rgba(1, 1, 1, 0.05);
+        border-radius: 30px;
         --min-hotspot-opacity: 0;
       }
       img {
         padding-left: 60vh;
         padding-right: 60vh;
         width: 100%;
+      }
+      .activateArbtn{
+        /* background-color: white;
+        border-radius: 4px;
+        border: none; */
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        height: 18%;
+        background: rgba(101, 119, 179, 0.2);
+        box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);
+        border-radius: 30px;
+        font-size: 20px;
+        color: white;
       }
     </style>
 
@@ -80,7 +101,7 @@
 
   <body style="margin: 0; overflow: hidden;">
     
-
+    <div id="model-container">
     <model-viewer 
       id="reveal"
       loading="eager"
@@ -91,13 +112,14 @@
       camera-controls 
       alt="A 3D model of an astronaut" 
     >
-      <button id="btn-android" slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+      <button slot="ar-button" class="activateArbtn">
         Activate AR
       </button>
 
       <button id="play-btn" slot="hotspot-dim+X-Y+Z" class="dot" data-position="0 0 0" data-normal="0 0 0"></button>
       
     </model-viewer>  
+    </div>
 
     <script>
     const modelViewer = document.querySelector('#reveal'); 
@@ -107,7 +129,6 @@
         const x2 = size.x / 2;
         const y2 = size.y / 2;
         const z2 = size.z / 2;
-        modelViewer.querySelector('button[slot="ar-button"]').click();
 
         modelViewer.updateHotspot({
           name: 'hotspot-dim+X-Y+Z',
