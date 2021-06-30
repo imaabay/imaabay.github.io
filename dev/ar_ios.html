@@ -18,24 +18,44 @@
         background-size: cover;
         background-attachment: fixed;
       }
-      img {
+      #model-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
         width: 100%;
-        height: 25%;
+        z-index: 10;
+        margin-top: 20vh;
+        padding: 5px;
+      }
+      img{
+        width: 100%;
+      }
+      .activateArbtn{
+        /* background-color: white;
+        border-radius: 4px;
+        border: none; */
+        border: none;
+        position: absolute;
+        bottom: 16px;
+        height: 18%;
+        background: rgba(101, 119, 179, 0.2);
+        box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);
+        border-radius: 30px;
+        font-size: 20px;
+        color: white;
+        margin-left: 5px;
       }
     </style>
-
-    <script>
-      $(document).ready(function() {
-        $('#ios-img').trigger('click');      
-      });
-    </script>
   </head>
 
   <body style="margin: 0;">
-
-    <a id="arb-link" rel="ar" href="../models/3D_Wine_Bottle_Model.usdz#custom=https://imaabay.github.io/dev/next.html&customHeight=medium">
-      <img id="ios-img" src="../assets/background.jpg" />
-    </a>
+    <div id="model-container">
+     <a id="arb-link" rel="ar" href="../models/3D_Wine_Bottle_Model.usdz#custom=https://imaabay.github.io/dev/next.html&customHeight=medium">
+      <img id="ios-img" src="../assets/bottle_ios.png" />
+      <button class="activateArbtn">Activate AR</button>
+     </a>
+    </div>
 
     <script>
      const linkElementt = document.getElementById("arb-link");
