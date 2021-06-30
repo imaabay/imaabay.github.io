@@ -7,39 +7,47 @@
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 <style type="text/css">
+    body{
+      background-image: url("../assets/background.jpg");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
     .overlay {
-    width: 100%;
-    background: rgba(0,0,0,.75);
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
+      width: 100%;
+      background: rgba(0,0,0,.75);
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
     }
     .videoBox {
-    position: fixed;
-    width: 90%;
-    left: 50%;
-    top:50%;
-    transform: translateY(-50%) translateX(-50%);
-    background: rgba(0,0,0,0.5);
-    text-align: center;
+      position: fixed;
+      width: 90%;
+      left: 50%;
+      top:50%;
+      transform: translateY(-50%) translateX(-50%);
+      background: rgba(0,0,0,0.5);
+      text-align: center;
     }
     .videoBox video {
-    width: 100%;
+      width: 100%;
     }
     .close {
-    width: 36px;
-    height: 36px;
-    position: absolute;
-    top: -18px;
-    right: -18px;
-    display: block;
-    background: transparent url(images/close.png) no-repeat center center;
-    opacity: .8;
+      width: 36px;
+      height: 36px;
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      display: block;
+      background: transparent url(images/close.png) no-repeat center center;
+      opacity: .8;
     }
     .close:hover {
-    opacity: 1;
+      opacity: 1;
     }
     @media (min-width: 767px) {
     .videoBox {
