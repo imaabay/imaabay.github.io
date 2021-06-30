@@ -83,6 +83,7 @@
     </model-viewer>  
 
     <script>
+    const modelViewer = document.querySelector('#reveal'); 
       modelViewer.addEventListener('load', () => {
         const center = modelViewer.getCameraTarget();
         const size = modelViewer.getDimensions();
